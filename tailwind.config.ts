@@ -28,6 +28,18 @@ export default {
           purple: "#F584FF",
           green: "#C3FF00",
         },
+        lavender: {
+          50: "#f5f3ff",
+          100: "#ede9fe",
+          200: "#ddd6fe",
+          300: "#c4b5fd",
+          400: "#a78bfa",
+          500: "#8b5cf6",
+          600: "#7c3aed",
+          700: "#6d28d9",
+          800: "#5b21b6",
+          900: "#4c1d95",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -93,6 +105,10 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontFamily: {
+        'bubblegum': ['Bubblegum Sans', 'cursive'],
+        'comic': ['Comic Sans MS', 'Comic Sans', 'cursive'],
       },
     },
   },

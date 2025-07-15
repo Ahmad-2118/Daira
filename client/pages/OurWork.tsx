@@ -19,9 +19,7 @@ export default function OurWork() {
       <header className="relative z-50 flex items-center justify-between px-8 h-[50px] mt-[10px] bg-daira-dark">
         <div className="flex items-center">
           <div className="w-8 h-8 mr-4">
-            <svg viewBox="0 0 29 29" className="w-full h-full fill-white">
-              <path d="M14.5 0L29 14.5L14.5 29L0 14.5L14.5 0Z" />
-            </svg>
+            <img src="/Union logo.png" alt="Logo" className="w-full h-full" />
           </div>
         </div>
 
@@ -52,13 +50,12 @@ export default function OurWork() {
                 <a href="/" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Home</a>
                 <a href="/our-work" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Our Work</a>
                 <a href="#about" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">About Us</a>
-                <a href="#contact" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Contact</a>
               </div>
             )}
           </div>
-          <button className="bg-daira-orange-light hover:bg-daira-orange transition-colors px-6 py-2 rounded-xl text-black font-bold text-lg focus:outline-none">
+          <a href="/contact" className="bg-daira-orange-light hover:bg-daira-orange transition-colors px-6 py-2 rounded-xl text-black font-bold text-lg focus:outline-none">
             Contact us
-          </button>
+          </a>
         </div>
       </header>
 

@@ -41,9 +41,9 @@ export default function ContactForm() {
       {/* Header */}
       <header className="relative z-50 flex items-center justify-between px-8 h-[50px] mt-[10px] bg-daira-dark">
         <div className="flex items-center">
-          <div className="w-8 h-8 mr-4">
+          <a href="/" className="w-8 h-8 mr-4 hover:opacity-80 transition-opacity duration-300">
             <img src="/Union logo.png" alt="Logo" className="w-full h-full" />
-          </div>
+          </a>
         </div>
 
         <div className="flex items-center space-x-4 ml-[20px]">
@@ -59,22 +59,42 @@ export default function ContactForm() {
           </span>
         </div>
 
-        {/* Menu Dropdown */}
-        <div className="flex items-center space-x-4">
-          <div className="relative">
+        {/* Hamburger Menu */}
+        <div className="relative group">
+          <div className="flex items-center gap-2 cursor-pointer">
+            <span className="text-white text-lg font-bold">Menu</span>
+            <div className="flex flex-col justify-center items-center w-8 h-8">
+              <span className="w-6 h-0.5 bg-white transition-all duration-300 group-hover:rotate-45 group-hover:translate-y-1.5"></span>
+              <span className="w-6 h-0.5 bg-white transition-all duration-300 mt-1 group-hover:opacity-0"></span>
+              <span className="w-6 h-0.5 bg-white transition-all duration-300 mt-1 group-hover:-rotate-45 group-hover:-translate-y-1.5"></span>
+            </div>
+          </div>
+          
+          {/* Desktop Hover Menu */}
+          <div className="absolute right-0 mt-4 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div className="py-2">
+              <a href="/our-work" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Our Work</a>
+              <a href="/case-studies" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Case Studies</a>
+              <a href="#about" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">About Us</a>
+              <a href="/contact" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Contact Us</a>
+            </div>
+          </div>
+          
+          {/* Mobile Click Menu */}
+          <div className="lg:hidden">
             <button
               onClick={() => setMenuOpen((open) => !open)}
-              className="bg-daira-orange-light hover:bg-daira-orange transition-colors px-6 py-2 rounded-xl text-black font-bold text-lg focus:outline-none"
-            >
-              Menu
-            </button>
-            {menuOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 animate-fadeIn">
-                <a href="/" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Home</a>
+              className="absolute inset-0 w-full h-full opacity-0"
+              aria-label="Toggle mobile menu"
+            />
+            <div className={`absolute right-0 mt-4 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 transition-all duration-300 transform ${menuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
+              <div className="py-2">
                 <a href="/our-work" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Our Work</a>
+                <a href="/case-studies" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Case Studies</a>
                 <a href="#about" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">About Us</a>
+                <a href="/contact" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Contact Us</a>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </header>
@@ -191,7 +211,7 @@ export default function ContactForm() {
           </div>
         </div>
         <div className="w-full mt-4">
-          <h2 className="text-7xl md:text-8xl font-black uppercase text-white text-left">LET'S WORK TOGETHER</h2>
+          <h2 className="text-7xl md:text-8xl font-black uppercase text-white text-center">LET'S WORK TOGETHER</h2>
         </div>
       </footer>
     </div>

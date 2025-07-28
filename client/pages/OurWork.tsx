@@ -18,9 +18,9 @@ export default function OurWork() {
       {/* Header */}
       <header className="relative z-50 flex items-center justify-between px-8 h-[50px] mt-[10px] bg-daira-dark">
         <div className="flex items-center">
-          <div className="w-8 h-8 mr-4">
+          <a href="/" className="w-8 h-8 mr-4 hover:opacity-80 transition-opacity duration-300">
             <img src="/Union logo.png" alt="Logo" className="w-full h-full" />
-          </div>
+          </a>
         </div>
 
         <div className="flex items-center space-x-4 ml-[20px]">
@@ -36,26 +36,43 @@ export default function OurWork() {
           </span>
         </div>
 
-        {/* Menu Dropdown */}
-        <div className="flex items-center space-x-4">
-          <div className="relative">
+        {/* Hamburger Menu */}
+        <div className="relative group">
+          <div className="flex items-center gap-2 cursor-pointer">
+            <span className="text-white text-lg font-bold">Menu</span>
+            <div className="flex flex-col justify-center items-center w-8 h-8">
+              <span className="w-6 h-0.5 bg-white transition-all duration-300 group-hover:rotate-45 group-hover:translate-y-1.5"></span>
+              <span className="w-6 h-0.5 bg-white transition-all duration-300 mt-1 group-hover:opacity-0"></span>
+              <span className="w-6 h-0.5 bg-white transition-all duration-300 mt-1 group-hover:-rotate-45 group-hover:-translate-y-1.5"></span>
+            </div>
+          </div>
+          
+          {/* Desktop Hover Menu */}
+          <div className="absolute right-0 mt-4 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div className="py-2">
+              <a href="/our-work" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Our Work</a>
+              <a href="/case-studies" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Case Studies</a>
+              <a href="#about" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">About Us</a>
+              <a href="/contact" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Contact Us</a>
+            </div>
+          </div>
+          
+          {/* Mobile Click Menu */}
+          <div className="lg:hidden">
             <button
               onClick={() => setMenuOpen((open) => !open)}
-              className="bg-daira-orange-light hover:bg-daira-orange transition-colors px-6 py-2 rounded-xl text-black font-bold text-lg focus:outline-none"
-            >
-              Menu
-            </button>
-            {menuOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 animate-fadeIn">
-                <a href="/" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Home</a>
+              className="absolute inset-0 w-full h-full opacity-0"
+              aria-label="Toggle mobile menu"
+            />
+            <div className={`absolute right-0 mt-4 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 transition-all duration-300 transform ${menuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
+              <div className="py-2">
                 <a href="/our-work" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Our Work</a>
+                <a href="/case-studies" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Case Studies</a>
                 <a href="#about" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">About Us</a>
+                <a href="/contact" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Contact Us</a>
               </div>
-            )}
+            </div>
           </div>
-          <a href="/contact" className="bg-daira-orange-light hover:bg-daira-orange transition-colors px-6 py-2 rounded-xl text-black font-bold text-lg focus:outline-none">
-            Contact us
-          </a>
         </div>
       </header>
 
@@ -82,19 +99,61 @@ export default function OurWork() {
         {/* Portfolio Grid */}
         <div className="space-y-16">
           {caseStudyPairs.map((pair, rowIndex) => (
-            <div key={rowIndex} className="grid lg:grid-cols-2 gap-8">
+            <div key={rowIndex} className="grid lg:grid-cols-2 gap-5">
               {pair.map((caseStudy) => (
                 <div key={caseStudy.id} className="space-y-4 animate-fadeIn transition-opacity duration-700">
                   <a
                     href={`/case-study/${caseStudy.id}`}
-                    className="relative bg-daira-dark border-2 border-white rounded-lg overflow-hidden h-96 block group transition-transform hover:scale-105 hover:brightness-110 duration-300"
+                    className="relative bg-daira-dark border-2 border-white rounded-lg overflow-hidden block group transition-transform hover:scale-105 hover:brightness-110 duration-300"
+                    style={{ height: '600px' }}
                   >
-                    <img
-                      src={caseStudy.overview.image}
-                      alt={`${caseStudy.title} project`}
-                      className="w-full h-full object-cover"
-                    />
-                  </a>
+                    {/* 2x2 Image Grid */}
+                    <div className="flex items-center justify-center h-full">
+                      <div className="grid grid-cols-2 grid-rows-2 gap-0 p-32
+                      ">
+                      {/* Top Left Image */}
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={caseStudy.overview.image}
+                          alt={`${caseStudy.title} - Overview`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                      
+                      {/* Top Right Image */}
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={caseStudy.challenge.image}
+                          alt={`${caseStudy.title} - Challenge`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                      
+                      {/* Bottom Left Image */}
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={caseStudy.solution.image}
+                          alt={`${caseStudy.title} - Solution`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                      
+                      {/* Bottom Right Image - Logo or additional image */}
+                      <div className="relative overflow-hidden bg-gradient-to-br from-daira-orange/10 to-transparent">
+                        <img
+                          src={caseStudy.logo}
+                          alt={`${caseStudy.title} - Logo`}
+                          className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-110"
+                          style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.10))' }}
+                        />
+                        <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
                   <div className="flex justify-between items-center">
                     <div className="text-left">
                       <h3 className="text-2xl font-semibold text-white">
@@ -137,7 +196,7 @@ export default function OurWork() {
           </div>
         </div>
         <div className="w-full mt-4">
-          <h2 className="text-7xl md:text-8xl font-black uppercase text-white text-left">LET'S WORK TOGETHER</h2>
+          <h2 className="text-7xl md:text-8xl font-black uppercase text-white text-center">LET'S WORK TOGETHER</h2>
         </div>
       </footer>
     </div>

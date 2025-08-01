@@ -252,16 +252,26 @@ export default function OurWork() {
             </a>
           </div>
           <div className="space-y-4 text-right">
-            <a href="#" className="block text-lg uppercase tracking-wide">
+            <a 
+              href="https://www.instagram.com/_daira.pk_?igsh=OXN5dW4ybmIwazFx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
               INSTAGRAM
             </a>
-            <a href="#" className="block text-lg uppercase tracking-wide">
-              FACEBOOK
+            <a 
+              href="https://www.linkedin.com/company/dairapk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              LINKEDIN
             </a>
-            <a href="#" className="block text-lg uppercase tracking-wide">
-              LINKDLN
-            </a>
-            <a href="#" className="block text-lg uppercase tracking-wide">
+            <a 
+              href="mailto:DAIRAPK@GMAIL.COM"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
               EMAIL
             </a>
           </div>

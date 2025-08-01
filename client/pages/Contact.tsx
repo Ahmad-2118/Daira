@@ -268,22 +268,20 @@ export default function Contact() {
           </div>
           <div className="space-y-4 text-right">
             <a
-              href="#"
+              href="https://www.instagram.com/_daira.pk_?igsh=OXN5dW4ybmIwazFx"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
             >
               INSTAGRAM
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/dairapk"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
             >
-              FACEBOOK
-            </a>
-            <a
-              href="#"
-              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
-            >
-              LINKDLN
+              LINKEDIN
             </a>
             <a
               href="mailto:DAIRAPK@GMAIL.COM"

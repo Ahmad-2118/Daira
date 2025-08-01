@@ -407,7 +407,7 @@ export default function Index() {
                     }
                     className="w-full flex justify-between items-center text-left"
                   >
-                    <h3 className="text-8xl font-black text-black">
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black text-black">
                       Product Shoot
                     </h3>
                     <svg
@@ -425,16 +425,16 @@ export default function Index() {
                     </svg>
                   </button>
                   {activeAccordion === "product-shoot" && (
-                    <div className="mt-8 animate-fadeIn">
-                      <div className="grid md:grid-cols-2 gap-8">
+                    <div className="mt-6 sm:mt-8 animate-fadeIn">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                         <div className="flex flex-col">
-                          <p className="text-black text-xl leading-relaxed max-w-lg mb-6">
+                          <p className="text-black text-base sm:text-lg md:text-xl leading-relaxed max-w-lg mb-4 sm:mb-6">
                             Professional product photography that showcases your
                             products in their best light. We create stunning
                             visuals that highlight quality, features, and appeal
                             to your target audience.
                           </p>
-                          <p className="text-black text-lg leading-relaxed max-w-lg">
+                          <p className="text-black text-sm sm:text-base md:text-lg leading-relaxed max-w-lg">
                             Our studio setup includes professional lighting,
                             high-resolution cameras, and creative styling to
                             ensure your products look irresistible. Perfect for
@@ -443,24 +443,24 @@ export default function Index() {
                           </p>
                         </div>
                         <div className="max-w-lg">
-                          <div className="space-y-4 text-right">
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                          <div className="space-y-3 sm:space-y-4 text-right">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Studio Photography
                               </span>
                             </div>
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Lifestyle Shoots
                               </span>
                             </div>
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 360° Product Views
                               </span>
                             </div>
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Retouching & Editing
                               </span>
                             </div>
@@ -484,7 +484,7 @@ export default function Index() {
                     }
                     className="w-full flex justify-between items-center text-left"
                   >
-                    <h3 className="text-8xl font-black text-black">
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black text-black">
                       Content Creation
                     </h3>
                     <svg
@@ -502,16 +502,16 @@ export default function Index() {
                     </svg>
                   </button>
                   {activeAccordion === "content-creation" && (
-                    <div className="mt-8 animate-fadeIn">
-                      <div className="grid md:grid-cols-2 gap-8">
+                    <div className="mt-6 sm:mt-8 animate-fadeIn">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                         <div className="flex flex-col">
-                          <p className="text-black text-xl leading-relaxed max-w-lg mb-6">
+                          <p className="text-black text-base sm:text-lg md:text-xl leading-relaxed max-w-lg mb-4 sm:mb-6">
                             Engaging content that tells your story and connects
                             with your audience. We create compelling copy,
                             visuals, and multimedia content that drives
                             engagement and conversions.
                           </p>
-                          <p className="text-black text-lg leading-relaxed max-w-lg">
+                          <p className="text-black text-sm sm:text-base md:text-lg leading-relaxed max-w-lg">
                             From social media posts to blog articles, we craft
                             content that resonates with your brand voice and
                             speaks directly to your target audience. Our content
@@ -520,24 +520,24 @@ export default function Index() {
                           </p>
                         </div>
                         <div className="max-w-lg">
-                          <div className="space-y-4 text-right">
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                          <div className="space-y-3 sm:space-y-4 text-right">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Social Media Content
                               </span>
                             </div>
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Blog Writing
                               </span>
                             </div>
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Email Campaigns
                               </span>
                             </div>
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Video Content
                               </span>
                             </div>
@@ -561,7 +561,7 @@ export default function Index() {
                     }
                     className="w-full flex justify-between items-center text-left"
                   >
-                    <h3 className="text-8xl font-black text-black">
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black text-black">
                       Ad Creatives
                     </h3>
                     <svg
@@ -579,16 +579,16 @@ export default function Index() {
                     </svg>
                   </button>
                   {activeAccordion === "ad-creatives" && (
-                    <div className="mt-8 animate-fadeIn">
-                      <div className="grid md:grid-cols-2 gap-8">
+                    <div className="mt-6 sm:mt-8 animate-fadeIn">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                         <div className="flex flex-col">
-                          <p className="text-black text-xl leading-relaxed max-w-lg mb-6">
+                          <p className="text-black text-base sm:text-lg md:text-xl leading-relaxed max-w-lg mb-4 sm:mb-6">
                             Eye-catching advertising creatives that convert. We
                             design compelling visuals and copy that grab
                             attention and drive action across all digital
                             platforms.
                           </p>
-                          <p className="text-black text-lg leading-relaxed max-w-lg">
+                          <p className="text-black text-sm sm:text-base md:text-lg leading-relaxed max-w-lg">
                             From Facebook ads to Google display campaigns, we
                             create high-converting ad creatives that align with
                             your brand and target audience. Our designs are
@@ -596,24 +596,24 @@ export default function Index() {
                           </p>
                         </div>
                         <div className="max-w-lg">
-                          <div className="space-y-4 text-right">
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                          <div className="space-y-3 sm:space-y-4 text-right">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Social Media Ads
                               </span>
                             </div>
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Google Display Ads
                               </span>
                             </div>
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Banner Designs
                               </span>
                             </div>
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Video Ads
                               </span>
                             </div>
@@ -635,7 +635,7 @@ export default function Index() {
                     }
                     className="w-full flex justify-between items-center text-left"
                   >
-                    <h3 className="text-8xl font-black text-black">Websites</h3>
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black text-black">Websites</h3>
                     <svg
                       className={`w-8 h-8 text-black transform transition-transform duration-300 ${activeAccordion === "websites" ? "rotate-180" : ""}`}
                       fill="none"
@@ -651,16 +651,16 @@ export default function Index() {
                     </svg>
                   </button>
                   {activeAccordion === "websites" && (
-                    <div className="mt-8 animate-fadeIn">
-                      <div className="grid md:grid-cols-2 gap-8">
+                    <div className="mt-6 sm:mt-8 animate-fadeIn">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                         <div className="flex flex-col">
-                          <p className="text-black text-xl leading-relaxed max-w-lg mb-6">
+                          <p className="text-black text-base sm:text-lg md:text-xl leading-relaxed max-w-lg mb-4 sm:mb-6">
                             Modern, responsive websites that convert visitors
                             into customers. We build beautiful, functional
                             websites that reflect your brand and drive business
                             growth.
                           </p>
-                          <p className="text-black text-lg leading-relaxed max-w-lg">
+                          <p className="text-black text-sm sm:text-base md:text-lg leading-relaxed max-w-lg">
                             From simple landing pages to complex e-commerce
                             platforms, we create websites that are fast, secure,
                             and optimized for search engines. Our development
@@ -669,24 +669,24 @@ export default function Index() {
                           </p>
                         </div>
                         <div className="max-w-lg">
-                          <div className="space-y-4 text-right">
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                          <div className="space-y-3 sm:space-y-4 text-right">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Landing Pages
                               </span>
                             </div>
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 E-commerce Sites
                               </span>
                             </div>
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Corporate Websites
                               </span>
                             </div>
-                            <div className="border-b border-black pb-2 w-4/5 ml-auto flex flex-col items-end">
-                              <span className="text-black font-bold text-xl">
+                            <div className="border-b border-black pb-2 w-full sm:w-4/5 ml-auto flex flex-col items-end">
+                              <span className="text-black font-bold text-sm sm:text-base md:text-xl">
                                 Web Applications
                               </span>
                             </div>
@@ -713,11 +713,11 @@ export default function Index() {
                 <img
                   src="/Mask group.png"
                   alt="Mask group"
-                  className="absolute top-0 left-0 w-[325px] h-[325px] -translate-x-[35px] -translate-y-[100px] rotate-0    "
+                  className="absolute top-0 left-0 w-[325px] h-[325px] -translate-x-[35px] -translate-y-[100px] rotate-0"
                 />
                 <blockquote className="w-[350px] text-right text-black text-4xl font-bold font-['Inter'] uppercase leading-[45px] mt-20 mb-6 ml-auto translate-y-[95px]">
-                  “OUR SALES WERE DEAD. DAIRA REVIVED OUR INSTA AND GOT ORDERS
-                  ROLLING IN WITHIN TWO WEEKS!”
+                  "OUR SALES WERE DEAD. DAIRA REVIVED OUR INSTA AND GOT ORDERS
+                  ROLLING IN WITHIN TWO WEEKS!"
                 </blockquote>
                 {/* Name/Designation bottom left, Stars bottom right */}
                 <div className="absolute bottom-6 left-8 flex flex-col items-start">
@@ -859,16 +859,26 @@ export default function Index() {
             </a>
           </div>
           <div className="space-y-3 sm:space-y-4 text-left sm:text-right">
-            <a href="#" className="block text-sm sm:text-base md:text-lg uppercase tracking-wide">
+            <a 
+              href="https://www.instagram.com/_daira.pk_?igsh=OXN5dW4ybmIwazFx" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block text-sm sm:text-base md:text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
               INSTAGRAM
             </a>
-            <a href="#" className="block text-sm sm:text-base md:text-lg uppercase tracking-wide">
-              FACEBOOK
+            <a 
+              href="https://www.linkedin.com/company/dairapk" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block text-sm sm:text-base md:text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              LINKEDIN
             </a>
-            <a href="#" className="block text-sm sm:text-base md:text-lg uppercase tracking-wide">
-              LINKDLN
-            </a>
-            <a href="#" className="block text-sm sm:text-base md:text-lg uppercase tracking-wide">
+            <a 
+              href="mailto:DAIRAPK@GMAIL.COM"
+              className="block text-sm sm:text-base md:text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
               EMAIL
             </a>
           </div>

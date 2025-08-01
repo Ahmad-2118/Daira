@@ -1,37 +1,63 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from 'react';
+import { useIsMobile } from './use-mobile';
 
-export const useScrollAnimation = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const sectionsRef = useRef<HTMLDivElement[]>([]);
+interface UseScrollAnimationOptions {
+  threshold?: number;
+  rootMargin?: string;
+  triggerOnce?: boolean;
+  disableOnMobile?: boolean;
+}
+
+export function useScrollAnimation({
+  threshold = 0.1,
+  rootMargin = '0px',
+  triggerOnce = true,
+  disableOnMobile = false,
+}: UseScrollAnimationOptions = {}) {
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const elementRef = useRef<HTMLElement>(null);
+  const isMobile = useIsMobile();
+
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useEffect(() => {
-    const handleScroll = () => {
-      const windowHeight = window.innerHeight;
-
-      // Section animations only - logo stays fixed
-      sectionsRef.current.forEach((section) => {
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          const isVisible = rect.top < windowHeight * 0.8 && rect.bottom > 0;
-
-          if (isVisible) {
-            section.classList.add("visible");
-          }
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const addSectionRef = (ref: HTMLElement | null) => {
-    if (ref && !sectionsRef.current.includes(ref as HTMLDivElement)) {
-      sectionsRef.current.push(ref as HTMLDivElement);
+    // If disabled on mobile or user prefers reduced motion, show immediately
+    if ((isMobile && disableOnMobile) || prefersReducedMotion) {
+      setIsVisible(true);
+      setHasAnimated(true);
+      return;
     }
-  };
 
-  return { heroRef, addSectionRef };
-};
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && (!triggerOnce || !hasAnimated)) {
+          setIsVisible(true);
+          if (triggerOnce) {
+            setHasAnimated(true);
+          }
+        } else if (!triggerOnce) {
+          setIsVisible(false);
+        }
+      },
+      {
+        threshold,
+        rootMargin: isMobile ? '50px' : rootMargin, // Smaller margin on mobile for better performance
+      }
+    );
+
+    const currentElement = elementRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
+    }
+
+    return () => {
+      if (currentElement) {
+        observer.unobserve(currentElement);
+      }
+    };
+  }, [threshold, rootMargin, triggerOnce, hasAnimated, isMobile, disableOnMobile, prefersReducedMotion]);
+
+  return { elementRef, isVisible, hasAnimated };
+}

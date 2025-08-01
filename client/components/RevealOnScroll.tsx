@@ -1,21 +1,27 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
 interface RevealOnScrollProps {
   children: React.ReactNode;
-  animation?: 'fadeIn' | 'slideUp' | 'slideLeft' | 'slideRight' | 'scaleIn' | 'rotateIn';
+  animation?:
+    | "fadeIn"
+    | "slideUp"
+    | "slideLeft"
+    | "slideRight"
+    | "scaleIn"
+    | "rotateIn";
   delay?: number;
   duration?: number;
   threshold?: number;
   className?: string;
 }
 
-export default function RevealOnScroll({ 
-  children, 
-  animation = 'fadeIn', 
-  delay = 0, 
+export default function RevealOnScroll({
+  children,
+  animation = "fadeIn",
+  delay = 0,
   duration = 1000,
   threshold = 0.1,
-  className = "" 
+  className = "",
 }: RevealOnScrollProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -31,7 +37,7 @@ export default function RevealOnScroll({
           }, delay);
         }
       },
-      { threshold }
+      { threshold },
     );
 
     if (ref.current) {
@@ -46,21 +52,21 @@ export default function RevealOnScroll({
   }, [delay, threshold, hasAnimated]);
 
   const getAnimationClasses = () => {
-    const baseClasses = 'transition-all duration-1000 ease-out';
-    
+    const baseClasses = "transition-all duration-1000 ease-out";
+
     if (!isVisible) {
       switch (animation) {
-        case 'fadeIn':
+        case "fadeIn":
           return `${baseClasses} opacity-0`;
-        case 'slideUp':
+        case "slideUp":
           return `${baseClasses} opacity-0 transform translate-y-12`;
-        case 'slideLeft':
+        case "slideLeft":
           return `${baseClasses} opacity-0 transform -translate-x-12`;
-        case 'slideRight':
+        case "slideRight":
           return `${baseClasses} opacity-0 transform translate-x-12`;
-        case 'scaleIn':
+        case "scaleIn":
           return `${baseClasses} opacity-0 transform scale-75`;
-        case 'rotateIn':
+        case "rotateIn":
           return `${baseClasses} opacity-0 transform rotate-12 scale-75`;
         default:
           return `${baseClasses} opacity-0`;
@@ -71,12 +77,12 @@ export default function RevealOnScroll({
   };
 
   return (
-    <div 
-      ref={ref} 
+    <div
+      ref={ref}
       className={`${getAnimationClasses()} ${className}`}
       style={{ transitionDuration: `${duration}ms` }}
     >
       {children}
     </div>
   );
-} 
+}

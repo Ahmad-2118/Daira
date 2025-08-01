@@ -22,8 +22,8 @@ export default function CaseStudies() {
           <span className="text-white text-2xl font-normal flex items-center">
             bold-thinking
           </span>
-          <FlipCounter 
-            words={["branding", "Creative", "Innovative"]} 
+          <FlipCounter
+            words={["branding", "Creative", "Innovative"]}
             interval={3000}
           />
           <span className="text-white text-2xl font-normal flex items-center">
@@ -40,19 +40,45 @@ export default function CaseStudies() {
           >
             <span className="text-white text-lg font-bold">Menu</span>
             <div className="flex flex-col justify-center items-center w-8 h-8">
-              <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-              <span className={`w-6 h-0.5 bg-white transition-all duration-300 mt-1 ${menuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`w-6 h-0.5 bg-white transition-all duration-300 mt-1 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+              <span
+                className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`}
+              ></span>
+              <span
+                className={`w-6 h-0.5 bg-white transition-all duration-300 mt-1 ${menuOpen ? "opacity-0" : ""}`}
+              ></span>
+              <span
+                className={`w-6 h-0.5 bg-white transition-all duration-300 mt-1 ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
+              ></span>
             </div>
           </button>
-          
+
           {menuOpen && (
             <div className="absolute right-0 mt-4 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 animate-fadeIn">
               <div className="py-2">
-                <a href="/" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Home</a>
-                <a href="/our-work" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Our Work</a>
-                <a href="#about" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">About Us</a>
-                <a href="/contact" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Contact Us</a>
+                <a
+                  href="/"
+                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
+                >
+                  Home
+                </a>
+                <a
+                  href="/our-work"
+                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
+                >
+                  Our Work
+                </a>
+                <a
+                  href="#about"
+                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
+                >
+                  About Us
+                </a>
+                <a
+                  href="/contact"
+                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
+                >
+                  Contact Us
+                </a>
               </div>
             </div>
           )}
@@ -67,7 +93,9 @@ export default function CaseStudies() {
               Case Studies
             </h1>
             <p className="text-2xl md:text-3xl text-white/80 max-w-3xl leading-relaxed">
-              I worked on these projects as both a developer and designer, creating memorable experiences with smooth animations and interactive elements.
+              I worked on these projects as both a developer and designer,
+              creating memorable experiences with smooth animations and
+              interactive elements.
             </p>
           </div>
         </RevealOnScroll>
@@ -78,7 +106,11 @@ export default function CaseStudies() {
         <div className="max-w-7xl mx-auto">
           <div className="grid gap-16">
             {caseStudies.map((caseStudy, index) => (
-              <RevealOnScroll key={caseStudy.id} animation="slideUp" delay={index * 200}>
+              <RevealOnScroll
+                key={caseStudy.id}
+                animation="slideUp"
+                delay={index * 200}
+              >
                 <div className="group cursor-pointer">
                   <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Image Section */}
@@ -97,13 +129,13 @@ export default function CaseStudies() {
                     <div className="space-y-6">
                       <div className="flex items-center gap-4 mb-4">
                         <span className="text-6xl font-black text-daira-orange">
-                          {(index + 1).toString().padStart(2, '0')}.
+                          {(index + 1).toString().padStart(2, "0")}.
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-white group-hover:text-daira-orange transition-colors duration-300">
                           {caseStudy.title}
                         </h2>
                       </div>
-                      
+
                       <p className="text-xl text-white/80 leading-relaxed">
                         {caseStudy.overview.description}
                       </p>
@@ -133,7 +165,12 @@ export default function CaseStudies() {
                             stroke="currentColor"
                             viewBox="0 0 24 24"
                           >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
                           </svg>
                         </a>
                       </div>
@@ -154,7 +191,8 @@ export default function CaseStudies() {
               Ready to work together?
             </h2>
             <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-              Let's create something amazing. Get in touch and let's discuss your next project.
+              Let's create something amazing. Get in touch and let's discuss
+              your next project.
             </p>
             <a
               href="/contact"
@@ -180,21 +218,58 @@ export default function CaseStudies() {
       <footer className="bg-black text-white px-8 pt-16 pb-8">
         <div className="flex justify-between items-start mb-12">
           <div className="space-y-4">
-            <a href="/our-work" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">OUR WORK</a>
-            <a href="#about" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">ABOUT US</a>
-            <a href="/contact" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">CONTACT US</a>
+            <a
+              href="/our-work"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              OUR WORK
+            </a>
+            <a
+              href="#about"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              ABOUT US
+            </a>
+            <a
+              href="/contact"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              CONTACT US
+            </a>
           </div>
           <div className="space-y-4 text-right">
-            <a href="#" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">INSTAGRAM</a>
-            <a href="#" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">FACEBOOK</a>
-            <a href="#" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">LINKDLN</a>
-            <a href="mailto:DAIRAPK@GMAIL.COM" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">EMAIL</a>
+            <a
+              href="#"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              INSTAGRAM
+            </a>
+            <a
+              href="#"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              FACEBOOK
+            </a>
+            <a
+              href="#"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              LINKDLN
+            </a>
+            <a
+              href="mailto:DAIRAPK@GMAIL.COM"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              EMAIL
+            </a>
           </div>
         </div>
         <div className="w-full mt-4">
-          <h2 className="text-7xl md:text-8xl font-black uppercase text-white text-center">LET'S WORK TOGETHER</h2>
+          <h2 className="text-7xl md:text-8xl font-black uppercase text-white text-center">
+            LET'S WORK TOGETHER
+          </h2>
         </div>
       </footer>
     </div>
   );
-} 
+}

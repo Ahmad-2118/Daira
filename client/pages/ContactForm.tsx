@@ -9,24 +9,26 @@ export default function ContactForm() {
     name: "",
     company: "",
     email: "",
-    project: ""
+    project: "",
   });
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
   useEffect(() => {
     // Get selected services from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
-    const servicesParam = urlParams.get('services');
+    const servicesParam = urlParams.get("services");
     if (servicesParam) {
-      setSelectedServices(servicesParam.split(','));
+      setSelectedServices(servicesParam.split(","));
     }
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -41,7 +43,10 @@ export default function ContactForm() {
       {/* Header */}
       <header className="relative z-50 flex items-center justify-between px-8 h-[50px] mt-[10px] bg-daira-dark">
         <div className="flex items-center">
-          <a href="/" className="w-8 h-8 mr-4 hover:opacity-80 transition-opacity duration-300">
+          <a
+            href="/"
+            className="w-8 h-8 mr-4 hover:opacity-80 transition-opacity duration-300"
+          >
             <img src="/Union logo.png" alt="Logo" className="w-full h-full" />
           </a>
         </div>
@@ -50,8 +55,8 @@ export default function ContactForm() {
           <span className="text-white text-2xl font-normal flex items-center">
             bold-thinking
           </span>
-          <FlipCounter 
-            words={["branding", "Creative", "Innovative"]} 
+          <FlipCounter
+            words={["branding", "Creative", "Innovative"]}
             interval={3000}
           />
           <span className="text-white text-2xl font-normal flex items-center">
@@ -69,17 +74,37 @@ export default function ContactForm() {
               <span className="w-6 h-0.5 bg-white transition-all duration-300 mt-1 group-hover:-rotate-45 group-hover:-translate-y-1.5"></span>
             </div>
           </div>
-          
+
           {/* Desktop Hover Menu */}
           <div className="absolute right-0 mt-4 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
             <div className="py-2">
-              <a href="/our-work" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Our Work</a>
-              <a href="/case-studies" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Case Studies</a>
-              <a href="#about" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">About Us</a>
-              <a href="/contact" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Contact Us</a>
+              <a
+                href="/our-work"
+                className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
+              >
+                Our Work
+              </a>
+              <a
+                href="/case-studies"
+                className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
+              >
+                Case Studies
+              </a>
+              <a
+                href="#about"
+                className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
+              >
+                About Us
+              </a>
+              <a
+                href="/contact"
+                className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
+              >
+                Contact Us
+              </a>
             </div>
           </div>
-          
+
           {/* Mobile Click Menu */}
           <div className="lg:hidden">
             <button
@@ -87,12 +112,34 @@ export default function ContactForm() {
               className="absolute inset-0 w-full h-full opacity-0"
               aria-label="Toggle mobile menu"
             />
-            <div className={`absolute right-0 mt-4 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 transition-all duration-300 transform ${menuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
+            <div
+              className={`absolute right-0 mt-4 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 transition-all duration-300 transform ${menuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}
+            >
               <div className="py-2">
-                <a href="/our-work" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Our Work</a>
-                <a href="/case-studies" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Case Studies</a>
-                <a href="#about" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">About Us</a>
-                <a href="/contact" className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors">Contact Us</a>
+                <a
+                  href="/our-work"
+                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
+                >
+                  Our Work
+                </a>
+                <a
+                  href="/case-studies"
+                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
+                >
+                  Case Studies
+                </a>
+                <a
+                  href="#about"
+                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
+                >
+                  About Us
+                </a>
+                <a
+                  href="/contact"
+                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
+                >
+                  Contact Us
+                </a>
               </div>
             </div>
           </div>
@@ -107,19 +154,28 @@ export default function ContactForm() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 animate-fadeIn whitespace-nowrap">
               TIME TO CHAT!!
             </h1>
-            
+
             {/* Sub-headline */}
-            <p className="text-xl md:text-2xl text-white mb-16 animate-fadeIn" style={{animationDelay: '0.3s'}}>
+            <p
+              className="text-xl md:text-2xl text-white mb-16 animate-fadeIn"
+              style={{ animationDelay: "0.3s" }}
+            >
               TELL US ABOUT YOURSELF
             </p>
 
             {/* Selected Services Display */}
             {selectedServices.length > 0 && (
-              <div className="mb-8 animate-fadeIn" style={{animationDelay: '0.4s'}}>
+              <div
+                className="mb-8 animate-fadeIn"
+                style={{ animationDelay: "0.4s" }}
+              >
                 <p className="text-white text-lg mb-4">SELECTED SERVICES:</p>
                 <div className="flex flex-wrap justify-center gap-2">
                   {selectedServices.map((service) => (
-                    <span key={service} className="px-4 py-2 bg-daira-orange text-black rounded-lg text-sm font-medium">
+                    <span
+                      key={service}
+                      className="px-4 py-2 bg-daira-orange text-black rounded-lg text-sm font-medium"
+                    >
                       {service}
                     </span>
                   ))}
@@ -128,10 +184,16 @@ export default function ContactForm() {
             )}
 
             {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="space-y-8 animate-fadeIn" style={{animationDelay: '0.6s'}}>
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-8 animate-fadeIn"
+              style={{ animationDelay: "0.6s" }}
+            >
               {/* Name Field */}
               <div className="text-left">
-                <label className="block text-white text-lg mb-2">YOUR NAME</label>
+                <label className="block text-white text-lg mb-2">
+                  YOUR NAME
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -144,7 +206,9 @@ export default function ContactForm() {
 
               {/* Company Field */}
               <div className="text-left">
-                <label className="block text-white text-lg mb-2">COMPANY NAME</label>
+                <label className="block text-white text-lg mb-2">
+                  COMPANY NAME
+                </label>
                 <input
                   type="text"
                   name="company"
@@ -170,7 +234,9 @@ export default function ContactForm() {
 
               {/* Project Description Field */}
               <div className="text-left">
-                <label className="block text-white text-lg mb-2">BRIEFLY TELL US ABOUT YOUR PROJECT</label>
+                <label className="block text-white text-lg mb-2">
+                  BRIEFLY TELL US ABOUT YOUR PROJECT
+                </label>
                 <textarea
                   name="project"
                   value={formData.project}
@@ -199,21 +265,58 @@ export default function ContactForm() {
       <footer className="bg-black text-white px-8 pt-16 pb-8">
         <div className="flex justify-between items-start mb-12">
           <div className="space-y-4">
-            <a href="/our-work" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">OUR WORK</a>
-            <a href="#about" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">ABOUT US</a>
-            <a href="/contact" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">CONTACT US</a>
+            <a
+              href="/our-work"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              OUR WORK
+            </a>
+            <a
+              href="#about"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              ABOUT US
+            </a>
+            <a
+              href="/contact"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              CONTACT US
+            </a>
           </div>
           <div className="space-y-4 text-right">
-            <a href="#" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">INSTAGRAM</a>
-            <a href="#" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">FACEBOOK</a>
-            <a href="#" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">LINKDLN</a>
-            <a href="mailto:DAIRAPK@GMAIL.COM" className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors">EMAIL</a>
+            <a
+              href="#"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              INSTAGRAM
+            </a>
+            <a
+              href="#"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              FACEBOOK
+            </a>
+            <a
+              href="#"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              LINKDLN
+            </a>
+            <a
+              href="mailto:DAIRAPK@GMAIL.COM"
+              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+            >
+              EMAIL
+            </a>
           </div>
         </div>
         <div className="w-full mt-4">
-          <h2 className="text-7xl md:text-8xl font-black uppercase text-white text-center">LET'S WORK TOGETHER</h2>
+          <h2 className="text-7xl md:text-8xl font-black uppercase text-white text-center">
+            LET'S WORK TOGETHER
+          </h2>
         </div>
       </footer>
     </div>
   );
-} 
+}

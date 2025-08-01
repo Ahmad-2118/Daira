@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 interface AnimatedTextProps {
   text: string;
-  type?: 'typewriter' | 'fadeIn' | 'slideUp' | 'bounce';
+  type?: "typewriter" | "fadeIn" | "slideUp" | "bounce";
   speed?: number;
   delay?: number;
   className?: string;
   repeat?: boolean;
 }
 
-export default function AnimatedText({ 
-  text, 
-  type = 'fadeIn', 
-  speed = 100, 
+export default function AnimatedText({
+  text,
+  type = "fadeIn",
+  speed = 100,
   delay = 0,
   className = "",
-  repeat = false 
+  repeat = false,
 }: AnimatedTextProps) {
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    if (type === 'typewriter') {
+    if (type === "typewriter") {
       const timer = setTimeout(() => {
         if (currentIndex < text.length) {
           setDisplayText(text.slice(0, currentIndex + 1));
@@ -30,7 +30,7 @@ export default function AnimatedText({
         } else if (repeat) {
           setTimeout(() => {
             setCurrentIndex(0);
-            setDisplayText('');
+            setDisplayText("");
           }, 2000);
         }
       }, speed);
@@ -40,7 +40,7 @@ export default function AnimatedText({
   }, [currentIndex, text, speed, type, repeat]);
 
   useEffect(() => {
-    if (type !== 'typewriter') {
+    if (type !== "typewriter") {
       const timer = setTimeout(() => {
         setIsAnimating(true);
       }, delay);
@@ -50,15 +50,15 @@ export default function AnimatedText({
   }, [type, delay]);
 
   const getAnimationClasses = () => {
-    const baseClasses = 'transition-all duration-1000 ease-out';
-    
-    if (!isAnimating && type !== 'typewriter') {
+    const baseClasses = "transition-all duration-1000 ease-out";
+
+    if (!isAnimating && type !== "typewriter") {
       switch (type) {
-        case 'fadeIn':
+        case "fadeIn":
           return `${baseClasses} opacity-0`;
-        case 'slideUp':
+        case "slideUp":
           return `${baseClasses} opacity-0 transform translate-y-8`;
-        case 'bounce':
+        case "bounce":
           return `${baseClasses} opacity-0 transform scale-50`;
         default:
           return `${baseClasses} opacity-0`;
@@ -68,9 +68,9 @@ export default function AnimatedText({
     }
   };
 
-  if (type === 'typewriter') {
+  if (type === "typewriter") {
     return (
-      <span className={`${className} ${isAnimating ? 'animate-pulse' : ''}`}>
+      <span className={`${className} ${isAnimating ? "animate-pulse" : ""}`}>
         {displayText}
         <span className="animate-pulse">|</span>
       </span>
@@ -78,8 +78,6 @@ export default function AnimatedText({
   }
 
   return (
-    <span className={`${getAnimationClasses()} ${className}`}>
-      {text}
-    </span>
+    <span className={`${getAnimationClasses()} ${className}`}>{text}</span>
   );
-} 
+}

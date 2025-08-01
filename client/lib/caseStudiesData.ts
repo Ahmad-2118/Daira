@@ -97,7 +97,7 @@ export const caseStudiesData: Record<string, CaseStudyData> = {
     },
     tags: ["Content", "Graphics", "Digital Marketing"],
   },
-  "kiswa": {
+  kiswa: {
     id: "kiswa",
     title: "kiswa",
     logo: "https://cdn.builder.io/api/v1/image/assets/TEMP/a9465e4de76182aeb3f1c174e8172a53be7718a8?width=796",
@@ -123,7 +123,7 @@ export const caseStudiesData: Record<string, CaseStudyData> = {
     },
     tags: ["Graphics", "Branding"],
   },
-  "electrech": {
+  electrech: {
     id: "electrech",
     title: "electrech",
     logo: "/logo electrec.png",
@@ -164,4 +164,4 @@ export const getCaseStudyById = (id: string): CaseStudyData | null => {
 // Helper function to get all case studies
 export const getAllCaseStudies = (): CaseStudyData[] => {
   return Object.values(caseStudiesData);
-}; 
+};

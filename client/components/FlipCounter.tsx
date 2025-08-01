@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 interface FlipCounterProps {
   words: string[];
@@ -6,14 +6,18 @@ interface FlipCounterProps {
   className?: string;
 }
 
-export default function FlipCounter({ words, interval = 3000, className = "" }: FlipCounterProps) {
+export default function FlipCounter({
+  words,
+  interval = 3000,
+  className = "",
+}: FlipCounterProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipping, setIsFlipping] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setIsFlipping(true);
-      
+
       // Wait for flip animation to complete before changing word
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
@@ -25,17 +29,17 @@ export default function FlipCounter({ words, interval = 3000, className = "" }: 
   }, [words.length, interval]);
 
   return (
-    <span 
+    <span
       className={`text-daira-orange text-2xl font-normal flex items-center mt-2 ${
-        isFlipping ? 'animate-flipOut' : 'animate-flipIn'
+        isFlipping ? "animate-flipOut" : "animate-flipIn"
       } ${className}`}
-      style={{ 
+      style={{
         fontFamily: "'Aguafina Script', cursive",
-        transformStyle: 'preserve-3d',
-        perspective: '1000px'
+        transformStyle: "preserve-3d",
+        perspective: "1000px",
       }}
     >
       {words[currentIndex]}
     </span>
   );
-} 
+}

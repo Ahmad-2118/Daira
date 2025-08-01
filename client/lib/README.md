@@ -37,6 +37,7 @@ This directory contains the data structure for case studies used throughout the 
 ## Data Structure
 
 ### CaseStudyData Interface
+
 - `id`: Unique identifier for the case study (used in URLs)
 - `title`: Display name of the case study
 - `logo`: URL to the client's logo image
@@ -54,6 +55,7 @@ This directory contains the data structure for case studies used throughout the 
 ## Usage
 
 The case studies are automatically used in:
+
 - `/our-work` page - displays all case studies in a grid
 - `/case-study/[id]` pages - displays individual case study details
 
@@ -63,4 +65,4 @@ The case studies are automatically used in:
 - Logo images should be transparent backgrounds when possible
 - Overview, challenge, and solution images should be landscape orientation
 - Recommended image formats: JPG, PNG, WebP
-- Consider using CDN URLs for better performance 
+- Consider using CDN URLs for better performance

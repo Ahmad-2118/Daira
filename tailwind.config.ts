@@ -107,8 +107,8 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        'bubblegum': ['Bubblegum Sans', 'cursive'],
-        'comic': ['Comic Sans MS', 'Comic Sans', 'cursive'],
+        bubblegum: ["Bubblegum Sans", "cursive"],
+        comic: ["Comic Sans MS", "Comic Sans", "cursive"],
       },
     },
   },

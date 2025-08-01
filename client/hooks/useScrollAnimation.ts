@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 export const useScrollAnimation = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -13,25 +13,25 @@ export const useScrollAnimation = () => {
         if (section) {
           const rect = section.getBoundingClientRect();
           const isVisible = rect.top < windowHeight * 0.8 && rect.bottom > 0;
-          
+
           if (isVisible) {
-            section.classList.add('visible');
+            section.classList.add("visible");
           }
         }
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll(); // Initial check
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const addSectionRef = (ref: HTMLDivElement | null) => {
-    if (ref && !sectionsRef.current.includes(ref)) {
-      sectionsRef.current.push(ref);
+  const addSectionRef = (ref: HTMLElement | null) => {
+    if (ref && !sectionsRef.current.includes(ref as HTMLDivElement)) {
+      sectionsRef.current.push(ref as HTMLDivElement);
     }
   };
 
   return { heroRef, addSectionRef };
-}; 
+};

@@ -158,55 +158,55 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-black text-white px-8 pt-16 pb-8">
-        <div className="flex justify-between items-start mb-12">
-          <div className="space-y-4">
+      <footer className="bg-black text-white px-4 sm:px-6 md:px-8 pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8">
+        <div className="flex flex-col sm:flex-row justify-between items-start mb-8 sm:mb-12 gap-6 sm:gap-0">
+          <div className="space-y-3 sm:space-y-4">
             <a
               href="/our-work"
-              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+              className="block text-sm sm:text-base md:text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
             >
               OUR WORK
             </a>
             <a
               href="#about"
-              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+              className="block text-sm sm:text-base md:text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
             >
               ABOUT US
             </a>
             <a
               href="/contact"
-              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+              className="block text-sm sm:text-base md:text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
             >
               CONTACT US
             </a>
           </div>
-          <div className="space-y-4 text-right">
-            <a
-              href="https://www.instagram.com/_daira.pk_?igsh=OXN5dW4ybmIwazFx"
-              target="_blank"
+          <div className="space-y-3 sm:space-y-4 text-left sm:text-right">
+            <a 
+              href="https://www.instagram.com/_daira.pk_?igsh=OXN5dW4ybmIwazFx" 
+              target="_blank" 
               rel="noopener noreferrer"
-              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+              className="block text-sm sm:text-base md:text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
             >
               INSTAGRAM
             </a>
-            <a
-              href="https://www.linkedin.com/company/dairapk"
-              target="_blank"
+            <a 
+              href="https://www.linkedin.com/company/dairapk" 
+              target="_blank" 
               rel="noopener noreferrer"
-              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+              className="block text-sm sm:text-base md:text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
             >
               LINKEDIN
             </a>
-            <a
+            <a 
               href="mailto:DAIRAPK@GMAIL.COM"
-              className="block text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
+              className="block text-sm sm:text-base md:text-lg uppercase tracking-wide hover:text-daira-orange transition-colors"
             >
               EMAIL
             </a>
           </div>
         </div>
         <div className="w-full mt-4">
-          <h2 className="text-7xl md:text-8xl font-black uppercase text-white text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black uppercase text-white text-center">
             LET'S WORK TOGETHER
           </h2>
         </div>

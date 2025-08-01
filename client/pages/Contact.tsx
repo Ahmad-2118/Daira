@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import FlipCounter from "../components/FlipCounter";
 import RevealOnScroll from "../components/RevealOnScroll";
 import AnimatedText from "../components/AnimatedText";
+import ResponsiveHeader from "../components/ResponsiveHeader";
 
 export default function Contact() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
   const services = [
@@ -32,216 +32,130 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-daira-dark text-white overflow-x-hidden">
       {/* Header */}
-      <header className="relative z-50 flex items-center justify-between px-4 sm:px-6 md:px-8 h-[50px] mt-[10px] bg-daira-dark">
-        <div className="flex items-center">
-          <a
-            href="/"
-            className="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-4 hover:opacity-80 transition-opacity duration-300"
-          >
-            <img src="/Union logo.png" alt="Logo" className="w-full h-full" />
-          </a>
-        </div>
-
-        <div className="hidden sm:flex items-center space-x-2 md:space-x-4 ml-[10px] md:ml-[20px]">
-          <span className="text-white text-lg md:text-xl lg:text-2xl font-normal flex items-center">
-            bold-thinking
-          </span>
-          <FlipCounter
-            words={["branding", "Creative", "Innovative"]}
-            interval={3000}
-          />
-          <span className="text-white text-lg md:text-xl lg:text-2xl font-normal flex items-center">
-            agency
-          </span>
-        </div>
-
-        {/* Hamburger Menu */}
-        <div className="relative group">
-          <div className="flex items-center gap-2 cursor-pointer">
-            <span className="text-white text-lg font-bold">Menu</span>
-            <div className="flex flex-col justify-center items-center w-8 h-8">
-              <span className="w-6 h-0.5 bg-white transition-all duration-300 group-hover:rotate-45 group-hover:translate-y-1.5"></span>
-              <span className="w-6 h-0.5 bg-white transition-all duration-300 mt-1 group-hover:opacity-0"></span>
-              <span className="w-6 h-0.5 bg-white transition-all duration-300 mt-1 group-hover:-rotate-45 group-hover:-translate-y-1.5"></span>
-            </div>
-          </div>
-
-          {/* Desktop Hover Menu */}
-          <div className="absolute right-0 mt-4 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-            <div className="py-2">
-              <a
-                href="/our-work"
-                className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
-              >
-                Our Work
-              </a>
-              <a
-                href="/case-studies"
-                className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
-              >
-                Case Studies
-              </a>
-              <a
-                href="#about"
-                className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
-              >
-                About Us
-              </a>
-              <a
-                href="/contact"
-                className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
-              >
-                Contact Us
-              </a>
-            </div>
-          </div>
-
-          {/* Mobile Click Menu */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => setMenuOpen((open) => !open)}
-              className="absolute inset-0 w-full h-full opacity-0"
-              aria-label="Toggle mobile menu"
-            />
-            <div
-              className={`absolute right-0 mt-4 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 transition-all duration-300 transform ${menuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}
-            >
-              <div className="py-2">
-                <a
-                  href="/our-work"
-                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
-                >
-                  Our Work
-                </a>
-                <a
-                  href="/case-studies"
-                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
-                >
-                  Case Studies
-                </a>
-                <a
-                  href="#about"
-                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
-                >
-                  About Us
-                </a>
-                <a
-                  href="/contact"
-                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
-                >
-                  Contact Us
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
+      <ResponsiveHeader />
+      
       {/* Main Content */}
-      <section className="flex-1 flex flex-col justify-center items-center px-8 py-16">
-        <RevealOnScroll animation="slideUp" delay={300}>
-          <div className="max-w-2xl w-full text-center">
-            {/* Main Headline */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 animate-fadeIn whitespace-nowrap">
-              TIME TO CHAT!!
-            </h1>
-
-            {/* Instructions */}
-            <p
-              className="text-xl md:text-2xl text-white mb-4 animate-fadeIn"
-              style={{ animationDelay: "0.3s" }}
-            >
-              SELECT THE SERVICES YOU ARE LOOKING TO PARTNER WITH US ON.
-            </p>
-            <p
-              className="text-lg text-white mb-12 animate-fadeIn"
-              style={{ animationDelay: "0.4s" }}
-            >
-              YOU CAN ALWAYS SELECT MORE THAN ONE
-            </p>
-
-            {/* Service Selection Grid */}
-            <div
-              className="mb-12 animate-fadeIn"
-              style={{ animationDelay: "0.6s" }}
-            >
-              {/* First Row - 3 buttons */}
-              <div className="grid grid-cols-3 gap-4 mb-4">
-                {services.slice(0, 3).map((service) => (
-                  <button
-                    key={service}
-                    onClick={() => toggleService(service)}
-                    className={`px-6 py-4 rounded-xl border-2 transition-all duration-300 hover:scale-105 whitespace-nowrap text-sm ${
-                      selectedServices.includes(service)
-                        ? "border-daira-orange bg-daira-orange text-black"
-                        : "border-daira-orange text-white hover:bg-daira-orange hover:text-black"
-                    }`}
-                  >
-                    {service}
-                  </button>
-                ))}
-              </div>
-              {/* Second Row - 2 buttons centered */}
-              <div className="grid grid-cols-3 gap-4">
-                <div></div>
-                <div className="flex justify-center gap-4">
-                  <button
-                    onClick={() => toggleService(services[3])}
-                    className={`px-6 py-4 rounded-xl border-2 transition-all duration-300 hover:scale-105 whitespace-nowrap text-sm ${
-                      selectedServices.includes(services[3])
-                        ? "border-daira-orange bg-daira-orange text-black"
-                        : "border-daira-orange text-white hover:bg-daira-orange hover:text-black"
-                    }`}
-                  >
-                    {services[3]}
-                  </button>
-                  <button
-                    onClick={() => toggleService(services[4])}
-                    className={`px-6 py-4 rounded-xl border-2 transition-all duration-300 hover:scale-105 whitespace-nowrap text-sm ${
-                      selectedServices.includes(services[4])
-                        ? "border-daira-orange bg-daira-orange text-black"
-                        : "border-daira-orange text-white hover:bg-daira-orange hover:text-black"
-                    }`}
-                  >
-                    {services[4]}
-                  </button>
-                </div>
-                <div></div>
-              </div>
-            </div>
-
-            {/* NEXT Button */}
-            <button
-              onClick={handleNext}
-              disabled={selectedServices.length === 0}
-              className={`mb-12 px-12 py-4 rounded-lg text-xl font-bold transition-all duration-300 hover:scale-105 flex items-center gap-3 mx-auto ${
-                selectedServices.length > 0
-                  ? "bg-daira-orange text-white hover:bg-daira-orange-light cursor-pointer"
-                  : "bg-daira-orange text-white opacity-50 cursor-not-allowed"
-              }`}
-            >
-              NEXT
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-              </svg>
-            </button>
-
-            {/* Direct Contact Information */}
-            <div
-              className="text-center animate-fadeIn"
-              style={{ animationDelay: "0.8s" }}
-            >
-              <p className="text-lg text-white mb-4">
-                DON'T WANT TO FILL A FORM? JUST MESSAGE US
+      <div className="pt-16 sm:pt-20">
+        {/* Hero Section */}
+        <section className="px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+          <RevealOnScroll animation="slideUp">
+            <div className="max-w-6xl mx-auto text-center">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 sm:mb-8 leading-tight">
+                Let's Work Together
+              </h1>
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                Ready to bring your vision to life? Let's discuss your project and create something amazing together.
               </p>
-              <div className="space-y-2">
-                <p className="text-white text-lg">+92 325 4666640</p>
-                <p className="text-white text-lg">DAIRAPK@GMAIL.COM</p>
+            </div>
+          </RevealOnScroll>
+        </section>
+
+        {/* Main Content Section */}
+        <section className="flex-1 flex flex-col justify-center items-center px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+          <RevealOnScroll animation="slideUp" delay={300}>
+            <div className="max-w-2xl w-full text-center">
+              {/* Main Headline */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 animate-fadeIn whitespace-nowrap">
+                TIME TO CHAT!!
+              </h1>
+
+              {/* Instructions */}
+              <p
+                className="text-lg sm:text-xl md:text-2xl text-white mb-4 animate-fadeIn"
+                style={{ animationDelay: "0.3s" }}
+              >
+                SELECT THE SERVICES YOU ARE LOOKING TO PARTNER WITH US ON.
+              </p>
+              <p
+                className="text-base sm:text-lg text-white mb-8 sm:mb-12 animate-fadeIn"
+                style={{ animationDelay: "0.4s" }}
+              >
+                YOU CAN ALWAYS SELECT MORE THAN ONE
+              </p>
+
+              {/* Service Selection Grid */}
+              <div
+                className="mb-8 sm:mb-12 animate-fadeIn"
+                style={{ animationDelay: "0.6s" }}
+              >
+                {/* First Row - 3 buttons */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4">
+                  {services.slice(0, 3).map((service) => (
+                    <button
+                      key={service}
+                      onClick={() => toggleService(service)}
+                      className={`px-4 sm:px-6 py-3 sm:py-4 rounded-xl border-2 transition-all duration-300 hover:scale-105 whitespace-nowrap text-sm sm:text-base ${
+                        selectedServices.includes(service)
+                          ? "border-daira-orange bg-daira-orange text-black"
+                          : "border-daira-orange text-white hover:bg-daira-orange hover:text-black"
+                      }`}
+                    >
+                      {service}
+                    </button>
+                  ))}
+                </div>
+                {/* Second Row - 2 buttons centered */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                  <div></div>
+                  <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                    <button
+                      onClick={() => toggleService(services[3])}
+                      className={`px-4 sm:px-6 py-3 sm:py-4 rounded-xl border-2 transition-all duration-300 hover:scale-105 whitespace-nowrap text-sm sm:text-base ${
+                        selectedServices.includes(services[3])
+                          ? "border-daira-orange bg-daira-orange text-black"
+                          : "border-daira-orange text-white hover:bg-daira-orange hover:text-black"
+                      }`}
+                    >
+                      {services[3]}
+                    </button>
+                    <button
+                      onClick={() => toggleService(services[4])}
+                      className={`px-4 sm:px-6 py-3 sm:py-4 rounded-xl border-2 transition-all duration-300 hover:scale-105 whitespace-nowrap text-sm sm:text-base ${
+                        selectedServices.includes(services[4])
+                          ? "border-daira-orange bg-daira-orange text-black"
+                          : "border-daira-orange text-white hover:bg-daira-orange hover:text-black"
+                      }`}
+                    >
+                      {services[4]}
+                    </button>
+                  </div>
+                  <div></div>
+                </div>
+              </div>
+
+              {/* NEXT Button */}
+              <button
+                onClick={handleNext}
+                disabled={selectedServices.length === 0}
+                className={`mb-8 sm:mb-12 px-8 sm:px-12 py-3 sm:py-4 rounded-lg text-lg sm:text-xl font-bold transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 mx-auto ${
+                  selectedServices.length > 0
+                    ? "bg-daira-orange text-white hover:bg-daira-orange-light cursor-pointer"
+                    : "bg-daira-orange text-white opacity-50 cursor-not-allowed"
+                }`}
+              >
+                NEXT
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                </svg>
+              </button>
+
+              {/* Direct Contact Information */}
+              <div
+                className="text-center animate-fadeIn"
+                style={{ animationDelay: "0.8s" }}
+              >
+                <p className="text-base sm:text-lg text-white mb-4">
+                  DON'T WANT TO FILL A FORM? JUST MESSAGE US
+                </p>
+                <div className="space-y-2">
+                  <p className="text-white text-base sm:text-lg">+92 325 4666640</p>
+                  <p className="text-white text-base sm:text-lg">DAIRAPK@GMAIL.COM</p>
+                </div>
               </div>
             </div>
-          </div>
-        </RevealOnScroll>
-      </section>
+          </RevealOnScroll>
+        </section>
+      </div>
 
       {/* Footer */}
       <footer className="bg-black text-white px-8 pt-16 pb-8">

@@ -3,96 +3,24 @@ import FlipCounter from "../components/FlipCounter";
 import RevealOnScroll from "../components/RevealOnScroll";
 import AnimatedText from "../components/AnimatedText";
 import { getAllCaseStudies } from "../lib/caseStudiesData";
+import ResponsiveHeader from "../components/ResponsiveHeader";
 
 export default function CaseStudies() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const caseStudies = getAllCaseStudies();
 
   return (
     <div className="min-h-screen bg-daira-dark text-white overflow-x-hidden">
       {/* Header */}
-      <header className="relative z-50 flex items-center justify-between px-8 h-[50px] mt-[10px] bg-daira-dark">
-        <div className="flex items-center">
-          <div className="w-8 h-8 mr-4">
-            <img src="/Union logo.png" alt="Logo" className="w-full h-full" />
-          </div>
-        </div>
-
-        <div className="flex items-center space-x-4 ml-[20px]">
-          <span className="text-white text-2xl font-normal flex items-center">
-            bold-thinking
-          </span>
-          <FlipCounter
-            words={["branding", "Creative", "Innovative"]}
-            interval={3000}
-          />
-          <span className="text-white text-2xl font-normal flex items-center">
-            agency
-          </span>
-        </div>
-
-        {/* Hamburger Menu */}
-        <div className="relative">
-          <button
-            onClick={() => setMenuOpen((open) => !open)}
-            className="flex items-center gap-2 focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            <span className="text-white text-lg font-bold">Menu</span>
-            <div className="flex flex-col justify-center items-center w-8 h-8">
-              <span
-                className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`}
-              ></span>
-              <span
-                className={`w-6 h-0.5 bg-white transition-all duration-300 mt-1 ${menuOpen ? "opacity-0" : ""}`}
-              ></span>
-              <span
-                className={`w-6 h-0.5 bg-white transition-all duration-300 mt-1 ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
-              ></span>
-            </div>
-          </button>
-
-          {menuOpen && (
-            <div className="absolute right-0 mt-4 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-lg z-50 animate-fadeIn">
-              <div className="py-2">
-                <a
-                  href="/"
-                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
-                >
-                  Home
-                </a>
-                <a
-                  href="/our-work"
-                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
-                >
-                  Our Work
-                </a>
-                <a
-                  href="#about"
-                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
-                >
-                  About Us
-                </a>
-                <a
-                  href="/contact"
-                  className="block px-6 py-3 text-white hover:bg-daira-orange hover:text-black transition-colors"
-                >
-                  Contact Us
-                </a>
-              </div>
-            </div>
-          )}
-        </div>
-      </header>
-
+      <ResponsiveHeader />
+      
       {/* Hero Section */}
-      <section className="px-8 pt-32 pb-16">
+      <section className="px-4 sm:px-6 md:px-8 pt-20 sm:pt-24 md:pt-32 pb-16">
         <RevealOnScroll animation="slideUp">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-8xl md:text-9xl font-black text-white mb-8 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-white mb-6 sm:mb-8 leading-tight">
               Case Studies
             </h1>
-            <p className="text-2xl md:text-3xl text-white/80 max-w-3xl leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/80 max-w-3xl leading-relaxed">
               I worked on these projects as both a developer and designer,
               creating memorable experiences with smooth animations and
               interactive elements.

@@ -119,10 +119,14 @@ export default function Index() {
       <ParallaxSection speed={0.3}>
         <section className="relative">
           <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[634px] mx-4 sm:mx-6 md:mx-8 mt-4 rounded-lg overflow-hidden animate-fadeIn transition-opacity duration-700 hover-scale">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/790a3264ab2d3856b10e60f5a2ad24b54f307934?width=2764"
-              alt="Hero background"
+            <video
+              src="/daira intro.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
               className="w-full h-full object-cover"
+              poster="https://cdn.builder.io/api/v1/image/assets/TEMP/790a3264ab2d3856b10e60f5a2ad24b54f307934?width=2764"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 
@@ -708,31 +712,31 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-x-12 md:gap-y-16 justify-items-center items-start mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20">
             {/* Card 1 */}
             <RevealOnScroll animation="scaleIn" delay={400}>
-              <div className="relative w-[500px] h-[650px] bg-cyan-300 rounded-[19px] p-8 flex flex-col justify-between overflow-hidden hover-lift">
+              <div className="relative w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[500px] h-[400px] sm:h-[450px] md:h-[550px] lg:h-[650px] bg-cyan-300 rounded-[19px] p-4 sm:p-6 md:p-8 flex flex-col justify-between overflow-hidden hover-lift">
                 {/* Mask group corner - top left */}
                 <img
                   src="/Mask group.png"
                   alt="Mask group"
-                  className="absolute top-0 left-0 w-[325px] h-[325px] -translate-x-[35px] -translate-y-[100px] rotate-0"
+                  className="absolute top-0 left-0 w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[325px] lg:h-[325px] -translate-x-[15px] sm:-translate-x-[20px] md:-translate-x-[25px] lg:-translate-x-[35px] -translate-y-[40px] sm:-translate-y-[60px] md:-translate-y-[80px] lg:-translate-y-[100px] rotate-0"
                 />
-                <blockquote className="w-[350px] text-right text-black text-4xl font-bold font-['Inter'] uppercase leading-[45px] mt-20 mb-6 ml-auto translate-y-[95px]">
+                <blockquote className="w-full max-w-[240px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[350px] text-right text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-['Inter'] uppercase leading-tight sm:leading-snug md:leading-normal lg:leading-[45px] mt-10 sm:mt-12 md:mt-16 lg:mt-20 mb-3 sm:mb-4 md:mb-6 ml-auto translate-y-[30px] sm:translate-y-[40px] md:translate-y-[60px] lg:translate-y-[95px]">
                   "OUR SALES WERE DEAD. DAIRA REVIVED OUR INSTA AND GOT ORDERS
                   ROLLING IN WITHIN TWO WEEKS!"
                 </blockquote>
                 {/* Name/Designation bottom left, Stars bottom right */}
-                <div className="absolute bottom-6 left-8 flex flex-col items-start">
-                  <div className="text-black text-2xl font-medium font-['Inter'] uppercase leading-[48px]">
+                <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-8 flex flex-col items-start">
+                  <div className="text-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium font-['Inter'] uppercase leading-tight sm:leading-tight md:leading-tight lg:leading-[48px]">
                     HUZAIFA JABRAN
                   </div>
-                  <div className="text-black text-lg font-medium font-['Inter'] uppercase leading-[30px]">
+                  <div className="text-black text-xs sm:text-sm md:text-base lg:text-lg font-medium font-['Inter'] uppercase leading-tight sm:leading-tight md:leading-tight lg:leading-[30px]">
                     CEO, ABDUDAWOOD
                   </div>
                 </div>
-                <div className="absolute bottom-6 right-8 flex gap-2">
-                  <svg width="36" height="36" fill="black" viewBox="0 0 24 24">
+                <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-8 flex gap-1 sm:gap-1.5 md:gap-2">
+                  <svg width="16" height="16" className="sm:w-[20px] sm:h-[20px] md:w-[24px] md:h-[24px] lg:w-[32px] lg:h-[32px] xl:w-[36px] xl:h-[36px]" fill="black" viewBox="0 0 24 24">
                     <polygon points="12,2 15,10 24,10 17,15 19,24 12,19 5,24 7,15 0,10 9,10" />
                   </svg>
-                  <svg width="36" height="36" fill="black" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="sm:w-[20px] sm:h-[20px] md:w-[24px] md:h-[24px] lg:w-[32px] lg:h-[32px] xl:w-[36px] xl:h-[36px]" fill="black" viewBox="0 0 24 24">
                     <polygon points="12,2 15,10 24,10 17,15 19,24 12,19 5,24 7,15 0,10 9,10" />
                   </svg>
                 </div>
@@ -740,30 +744,30 @@ export default function Index() {
             </RevealOnScroll>
             {/* Card 2 */}
             <RevealOnScroll animation="scaleIn" delay={600}>
-              <div className="relative w-[500px] h-[650px] bg-lime-400 rounded-[19px] p-8 flex flex-col justify-between overflow-hidden hover-lift">
+              <div className="relative w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[500px] h-[400px] sm:h-[450px] md:h-[550px] lg:h-[650px] bg-lime-400 rounded-[19px] p-4 sm:p-6 md:p-8 flex flex-col justify-between overflow-hidden hover-lift">
                 {/* Mask group corner - top right */}
                 <img
                   src="/Mask group.png"
                   alt="Mask group"
-                  className="absolute top-0 right-0 w-[325px] h-[325px] translate-x-[105px] -translate-y-[40px] rotate-[90deg]"
+                  className="absolute top-0 right-0 w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[325px] lg:h-[325px] translate-x-[40px] sm:translate-x-[60px] md:translate-x-[80px] lg:translate-x-[105px] -translate-y-[20px] sm:-translate-y-[25px] md:-translate-y-[30px] lg:-translate-y-[40px] rotate-[90deg]"
                 />
-                <blockquote className="w-[350px] text-left text-black text-3xl font-bold font-['Inter'] uppercase leading-[45px] mt-20 mb-6 translate-y-[95px] ">
-                  “DAIRA CAPTURED OUR VISION PERFECTLY — MODERN, EMPATHETIC, AND
-                  CLEAN. LOVED THE BRAND IDENTITY!”
+                <blockquote className="w-full max-w-[240px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[350px] text-left text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-['Inter'] uppercase leading-tight sm:leading-snug md:leading-normal lg:leading-[45px] mt-10 sm:mt-12 md:mt-16 lg:mt-20 mb-3 sm:mb-4 md:mb-6 translate-y-[30px] sm:translate-y-[40px] md:translate-y-[60px] lg:translate-y-[95px]">
+                  "DAIRA CAPTURED OUR VISION PERFECTLY — MODERN, EMPATHETIC, AND
+                  CLEAN. LOVED THE BRAND IDENTITY!"
                 </blockquote>
-                <div className="absolute bottom-6 left-8 flex flex-col items-start">
-                  <div className="text-black text-2xl font-medium font-['Inter'] uppercase leading-[48px]">
+                <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-8 flex flex-col items-start">
+                  <div className="text-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium font-['Inter'] uppercase leading-tight sm:leading-tight md:leading-tight lg:leading-[48px]">
                     AMMAZ
                   </div>
-                  <div className="text-black text-lg font-medium font-['Inter'] uppercase leading-[30px]">
+                  <div className="text-black text-xs sm:text-sm md:text-base lg:text-lg font-medium font-['Inter'] uppercase leading-tight sm:leading-tight md:leading-tight lg:leading-[30px]">
                     FOUNDER, AMAN CARE
                   </div>
                 </div>
-                <div className="absolute bottom-6 right-8 flex gap-2">
-                  <svg width="36" height="36" fill="black" viewBox="0 0 24 24">
+                <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-8 flex gap-1 sm:gap-1.5 md:gap-2">
+                  <svg width="16" height="16" className="sm:w-[20px] sm:h-[20px] md:w-[24px] md:h-[24px] lg:w-[32px] lg:h-[32px] xl:w-[36px] xl:h-[36px]" fill="black" viewBox="0 0 24 24">
                     <polygon points="12,2 15,10 24,10 17,15 19,24 12,19 5,24 7,15 0,10 9,10" />
                   </svg>
-                  <svg width="36" height="36" fill="black" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="sm:w-[20px] sm:h-[20px] md:w-[24px] md:h-[24px] lg:w-[32px] lg:h-[32px] xl:w-[36px] xl:h-[36px]" fill="black" viewBox="0 0 24 24">
                     <polygon points="12,2 15,10 24,10 17,15 19,24 12,19 5,24 7,15 0,10 9,10" />
                   </svg>
                 </div>
@@ -771,30 +775,30 @@ export default function Index() {
             </RevealOnScroll>
             {/* Card 3 */}
             <RevealOnScroll animation="scaleIn" delay={800}>
-              <div className="relative w-[500px] h-[650px] bg-yellow-400 rounded-[19px] p-8 flex flex-col justify-between overflow-hidden hover-lift">
+              <div className="relative w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[500px] h-[400px] sm:h-[450px] md:h-[550px] lg:h-[650px] bg-yellow-400 rounded-[19px] p-4 sm:p-6 md:p-8 flex flex-col justify-between overflow-hidden hover-lift">
                 {/* Mask group corner - top left */}
                 <img
                   src="/Mask group.png"
                   alt="Mask group"
-                  className="absolute top-0 left-0 w-[325px] h-[325px] -translate-x-[35px] -translate-y-[100px] rotate-0"
+                  className="absolute top-0 left-0 w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[325px] lg:h-[325px] -translate-x-[15px] sm:-translate-x-[20px] md:-translate-x-[25px] lg:-translate-x-[35px] -translate-y-[40px] sm:-translate-y-[60px] md:-translate-y-[80px] lg:-translate-y-[100px] rotate-0"
                 />
-                <blockquote className="w-[350px] text-right text-black text-4xl font-bold font-['Inter'] uppercase leading-[45px] mt-20 mb-6 ml-auto translate-y-[95px]">
+                <blockquote className="w-full max-w-[240px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[350px] text-right text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-['Inter'] uppercase leading-tight sm:leading-snug md:leading-normal lg:leading-[45px] mt-10 sm:mt-12 md:mt-16 lg:mt-20 mb-3 sm:mb-4 md:mb-6 ml-auto translate-y-[30px] sm:translate-y-[40px] md:translate-y-[60px] lg:translate-y-[95px]">
                   "FUN, BOLD, AND QUIRKY — EXACTLY WHAT WE NEEDED. OUR CAFÉ
                   FINALLY FEELS LIKE A BRAND."
                 </blockquote>
-                <div className="absolute bottom-6 left-8 flex flex-col items-start">
-                  <div className="text-black text-2xl font-medium font-['Inter'] uppercase leading-[48px]">
+                <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-8 flex flex-col items-start">
+                  <div className="text-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium font-['Inter'] uppercase leading-tight sm:leading-tight md:leading-tight lg:leading-[48px]">
                     TARIQ MAHMOOD
                   </div>
-                  <div className="text-black text-lg font-medium font-['Inter'] uppercase leading-[30px]">
+                  <div className="text-black text-xs sm:text-sm md:text-base lg:text-lg font-medium font-['Inter'] uppercase leading-tight sm:leading-tight md:leading-tight lg:leading-[30px]">
                     CEO, CREAMSTREAM
                   </div>
                 </div>
-                <div className="absolute bottom-6 right-8 flex gap-2">
-                  <svg width="36" height="36" fill="black" viewBox="0 0 24 24">
+                <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-8 flex gap-1 sm:gap-1.5 md:gap-2">
+                  <svg width="16" height="16" className="sm:w-[20px] sm:h-[20px] md:w-[24px] md:h-[24px] lg:w-[32px] lg:h-[32px] xl:w-[36px] xl:h-[36px]" fill="black" viewBox="0 0 24 24">
                     <polygon points="12,2 15,10 24,10 17,15 19,24 12,19 5,24 7,15 0,10 9,10" />
                   </svg>
-                  <svg width="36" height="36" fill="black" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="sm:w-[20px] sm:h-[20px] md:w-[24px] md:h-[24px] lg:w-[32px] lg:h-[32px] xl:w-[36px] xl:h-[36px]" fill="black" viewBox="0 0 24 24">
                     <polygon points="12,2 15,10 24,10 17,15 19,24 12,19 5,24 7,15 0,10 9,10" />
                   </svg>
                 </div>
@@ -802,30 +806,30 @@ export default function Index() {
             </RevealOnScroll>
             {/* Card 4 */}
             <RevealOnScroll animation="scaleIn" delay={1000}>
-              <div className="relative w-[500px] h-[650px] bg-fuchsia-400 rounded-[19px] p-8 flex flex-col justify-between overflow-hidden hover-lift">
+              <div className="relative w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[500px] h-[400px] sm:h-[450px] md:h-[550px] lg:h-[650px] bg-fuchsia-400 rounded-[19px] p-4 sm:p-6 md:p-8 flex flex-col justify-between overflow-hidden hover-lift">
                 {/* Mask group corner - top right */}
                 <img
                   src="/Mask group.png"
                   alt="Mask group"
-                  className="absolute top-0 right-0 w-[325px] h-[325px] translate-x-[105px] -translate-y-[45px] rotate-90"
+                  className="absolute top-0 right-0 w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[325px] lg:h-[325px] translate-x-[40px] sm:translate-x-[60px] md:translate-x-[80px] lg:translate-x-[105px] -translate-y-[25px] sm:-translate-y-[30px] md:-translate-y-[35px] lg:-translate-y-[45px] rotate-90"
                 />
-                <blockquote className="w-[350px] text-left text-black text-4xl font-bold font-['Inter'] uppercase leading-[45px] mt-20 mb-6 translate-y-[95px]">
+                <blockquote className="w-full max-w-[240px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[350px] text-left text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-['Inter'] uppercase leading-tight sm:leading-snug md:leading-normal lg:leading-[45px] mt-10 sm:mt-12 md:mt-16 lg:mt-20 mb-3 sm:mb-4 md:mb-6 translate-y-[30px] sm:translate-y-[40px] md:translate-y-[60px] lg:translate-y-[95px]">
                   THEY GAVE US A FRESH, MODERN IDENTITY WITHOUT LOSING THE
                   SPIRITUAL TOUCH. BEAUTIFUL WORK
                 </blockquote>
-                <div className="absolute bottom-6 left-8 flex flex-col items-start">
-                  <div className="text-black text-2xl font-medium font-['Inter'] uppercase leading-[48px]">
-                    M. ABDULLAH
+                <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-8 flex flex-col items-start">
+                  <div className="text-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium font-['Inter'] uppercase leading-tight sm:leading-tight md:leading-tight lg:leading-[48px]">
+                    AMMAR
                   </div>
-                  <div className="text-black text-lg font-medium font-['Inter'] uppercase leading-[30px]">
-                    CEO, KISWA TRAVELS
+                  <div className="text-black text-xs sm:text-sm md:text-base lg:text-lg font-medium font-['Inter'] uppercase leading-tight sm:leading-tight md:leading-tight lg:leading-[30px]">
+                    FOUNDER, KISWA
                   </div>
                 </div>
-                <div className="absolute bottom-6 right-8 flex gap-2">
-                  <svg width="36" height="36" fill="black" viewBox="0 0 24 24">
+                <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-8 flex gap-1 sm:gap-1.5 md:gap-2">
+                  <svg width="16" height="16" className="sm:w-[20px] sm:h-[20px] md:w-[24px] md:h-[24px] lg:w-[32px] lg:h-[32px] xl:w-[36px] xl:h-[36px]" fill="black" viewBox="0 0 24 24">
                     <polygon points="12,2 15,10 24,10 17,15 19,24 12,19 5,24 7,15 0,10 9,10" />
                   </svg>
-                  <svg width="36" height="36" fill="black" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="sm:w-[20px] sm:h-[20px] md:w-[24px] md:h-[24px] lg:w-[32px] lg:h-[32px] xl:w-[36px] xl:h-[36px]" fill="black" viewBox="0 0 24 24">
                     <polygon points="12,2 15,10 24,10 17,15 19,24 12,19 5,24 7,15 0,10 9,10" />
                   </svg>
                 </div>

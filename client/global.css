@@ -418,3 +418,51 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #ff8c00;
 }
+
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+  /* Ensure text doesn't overflow on mobile */
+  .text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better spacing for mobile */
+  .mobile-spacing {
+    margin: 1rem 0;
+    padding: 0.5rem;
+  }
+}
+
+/* Tablet-specific styles */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Optimize for tablet */
+  .tablet-optimized {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve form elements on mobile */
+input, textarea, select {
+  font-size: 16px; /* Prevents zoom on iOS */
+}
+
+/* Better focus states for accessibility */
+button:focus, a:focus, input:focus, textarea:focus, select:focus {
+  outline: 2px solid #ffa500;
+  outline-offset: 2px;
+}

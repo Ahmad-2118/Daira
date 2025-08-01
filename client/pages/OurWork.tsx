@@ -16,25 +16,25 @@ export default function OurWork() {
   return (
     <div className="min-h-screen bg-daira-dark text-white">
       {/* Header */}
-      <header className="relative z-50 flex items-center justify-between px-8 h-[50px] mt-[10px] bg-daira-dark">
+      <header className="relative z-50 flex items-center justify-between px-4 sm:px-6 md:px-8 h-[50px] mt-[10px] bg-daira-dark">
         <div className="flex items-center">
           <a
             href="/"
-            className="w-8 h-8 mr-4 hover:opacity-80 transition-opacity duration-300"
+            className="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-4 hover:opacity-80 transition-opacity duration-300"
           >
             <img src="/Union logo.png" alt="Logo" className="w-full h-full" />
           </a>
         </div>
 
-        <div className="flex items-center space-x-4 ml-[20px]">
-          <span className="text-white text-2xl font-normal flex items-center">
+        <div className="hidden sm:flex items-center space-x-2 md:space-x-4 ml-[10px] md:ml-[20px]">
+          <span className="text-white text-lg md:text-xl lg:text-2xl font-normal flex items-center">
             bold-thinking
           </span>
           <FlipCounter
             words={["branding", "Creative", "Innovative"]}
             interval={3000}
           />
-          <span className="text-white text-2xl font-normal flex items-center">
+          <span className="text-white text-lg md:text-xl lg:text-2xl font-normal flex items-center">
             agency
           </span>
         </div>

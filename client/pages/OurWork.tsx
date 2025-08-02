@@ -62,13 +62,13 @@ export default function OurWork() {
                 >
                   <a
                     href={`/case-study/${caseStudy.id}`}
-                    className="relative bg-daira-dark border-2 border-white rounded-lg overflow-hidden block group transition-transform hover:scale-105 hover:brightness-110 duration-300 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]"
+                    className="relative bg-daira-dark border-2 border-white rounded-lg overflow-hidden block group transition-transform hover:scale-105 hover:brightness-110 duration-300 h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px]"
                   >
-                    {/* 2x2 Image Grid */}
-                    <div className="flex items-center justify-center h-full">
-                      <div
-                        className="grid grid-cols-2 grid-rows-2 gap-0 p-8 sm:p-16 md:p-24 lg:p-32"
-                      >
+                                         {/* 2x2 Image Grid */}
+                     <div className="flex items-center justify-center h-full p-4 sm:p-6 md:p-8 lg:p-10">
+                       <div
+                         className="grid grid-cols-2 grid-rows-2 gap-1 sm:gap-2 md:gap-3 w-full h-full max-w-[90%] max-h-[90%]"
+                       >
                         {/* Top Left Image */}
                         <div className="relative overflow-hidden">
                           <img
@@ -101,14 +101,14 @@ export default function OurWork() {
 
                         {/* Bottom Right Image - Logo or additional image */}
                         <div className="relative overflow-hidden bg-gradient-to-br from-daira-orange/10 to-transparent">
-                          <img
-                            src={caseStudy.logo}
-                            alt={`${caseStudy.title} - Logo`}
-                            className="w-full h-full object-contain p-2 sm:p-3 md:p-4 transition-transform duration-500 group-hover:scale-110"
-                            style={{
-                              filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.10))",
-                            }}
-                          />
+                                                     <img
+                             src={caseStudy.logo}
+                             alt={`${caseStudy.title} - Logo`}
+                             className="w-full h-full object-contain p-2 sm:p-3 md:p-4 lg:p-5 transition-transform duration-500 group-hover:scale-110"
+                             style={{
+                               filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.10))",
+                             }}
+                           />
                           <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             {" "}
                           </div>

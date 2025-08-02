@@ -36,32 +36,14 @@ export default function CaseStudy() {
     );
   }
 
-  // Get the appropriate brand logo for each case study
-  const getBrandLogo = (caseStudyId: string) => {
-    switch (caseStudyId) {
-      case 'aman-care':
-        return '/amancare.png';
-      case 'cream-stream':
-        return '/logo electrec.png';
-      case 'electrech':
-        return '/logo electrec.png';
-      case 'abu-dawood':
-        return '/Union logo.png';
-      case 'kiswa':
-        return '/Union logo.png';
-      default:
-        return '/Union logo.png';
-    }
-  };
-
   return (
     <div className="min-h-screen bg-daira-dark text-white overflow-x-hidden">
       {/* Fixed Brand Logo Background */}
       <div className="fixed inset-0 flex items-center justify-center z-0 pointer-events-none">
         <img
-          src={getBrandLogo(caseStudy.id)}
+          src={caseStudy.logo}
           alt={`${caseStudy.title} Logo`}
-          className="w-96 h-96 opacity-5 animate-pulse"
+          className="max-w-md max-h-md w-auto h-auto object-contain opacity-5 animate-pulse"
         />
       </div>
 

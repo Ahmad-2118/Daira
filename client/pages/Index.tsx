@@ -191,92 +191,97 @@ export default function Index() {
           <div className="grid gap-4 sm:gap-6 md:gap-8">
             {/* First Row - Aman Care */}
             <RevealOnScroll animation="slideUp" delay={200}>
-              <div className="bg-[#222222] rounded-xl p-4 sm:p-6 md:p-8 relative overflow-hidden h-[300px] sm:h-[400px] md:h-[500px] lg:h-[781px] hover-lift">
-                1
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/2a47fd68fc66712cd20c44dd97144b071d02e8f0?width=2537"
-                  alt="Aman Care project"
-                  className="w-full h-full object-cover rounded-lg hover-scale transition-transform duration-500"
-                />
-                <div
-                  className="absolute bottom-0 left-0 w-full flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#222222] px-4 sm:px-6 md:px-8 py-4 sm:py-6 gap-2 sm:gap-0"
-                  style={{ minHeight: "70px" }}
-                >
-                  <h3 className="text-white text-xl sm:text-2xl md:text-3xl font-bold">Aman Care</h3>
-                  <div className="flex flex-wrap gap-2 sm:gap-4 md:gap-8">
-                    <span className="px-3 sm:px-4 md:px-8 py-1 sm:py-2 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-lg font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
-                      Content
-                    </span>
-                    <span className="px-3 sm:px-4 md:px-8 py-1 sm:py-2 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-lg font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
-                      Graphics
-                    </span>
-                    <span className="px-3 sm:px-4 md:px-8 py-1 sm:py-2 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-lg font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
-                      Branding
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </RevealOnScroll>
-
-            {/* Second Row - Two Projects */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-              <RevealOnScroll animation="slideLeft" delay={400}>
-                <div className="flex flex-col hover-lift">
-                  <div className="bg-[#222222] rounded-t-xl rounded-b-none overflow-hidden h-48 sm:h-64 md:h-80 lg:h-96">
-                    <img
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/f89423905d0ca0e6c2f30532876f98601aff4fb5?width=1392"
-                      alt="Cream Stream project"
-                      className="w-full h-full object-cover hover-scale transition-transform duration-500"
-                    />
-                  </div>
+              <a href="/case-study/aman-care" className="block">
+                <div className="bg-[#222222] rounded-xl p-4 sm:p-6 md:p-8 relative overflow-hidden h-[300px] sm:h-[400px] md:h-[500px] lg:h-[781px] hover-lift">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/2a47fd68fc66712cd20c44dd97144b071d02e8f0?width=2537"
+                    alt="Aman Care project"
+                    className="w-full h-full object-cover rounded-lg hover-scale transition-transform duration-500"
+                  />
                   <div
-                    className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#222222] rounded-b-xl rounded-t-none px-4 sm:px-6 py-3 sm:py-4 gap-2 sm:gap-0"
-                    style={{ minHeight: "60px" }}
+                    className="absolute bottom-0 left-0 w-full flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#222222] px-4 sm:px-6 md:px-8 py-4 sm:py-6 gap-2 sm:gap-0"
+                    style={{ minHeight: "70px" }}
                   >
-                    <h3 className="text-white text-lg sm:text-xl font-extrabold whitespace-nowrap">
-                      Cream Stream
-                    </h3>
-                    <div className="flex flex-wrap gap-2 sm:gap-4">
-                      <span className="px-3 sm:px-4 md:px-6 py-1 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-base font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
+                    <h3 className="text-white text-xl sm:text-2xl md:text-3xl font-bold">Aman Care</h3>
+                    <div className="flex flex-wrap gap-2 sm:gap-4 md:gap-8">
+                      <span className="px-3 sm:px-4 md:px-8 py-1 sm:py-2 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-lg font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
                         Content
                       </span>
-                      <span className="px-3 sm:px-4 md:px-6 py-1 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-base font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
+                      <span className="px-3 sm:px-4 md:px-8 py-1 sm:py-2 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-lg font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
                         Graphics
                       </span>
-                      <span className="px-3 sm:px-4 md:px-6 py-1 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-base font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
+                      <span className="px-3 sm:px-4 md:px-8 py-1 sm:py-2 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-lg font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
                         Branding
                       </span>
                     </div>
                   </div>
                 </div>
+              </a>
+            </RevealOnScroll>
+
+            {/* Second Row - Two Projects */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+              <RevealOnScroll animation="slideLeft" delay={400}>
+                <a href="/case-study/cream-stream" className="block">
+                  <div className="flex flex-col hover-lift">
+                    <div className="bg-[#222222] rounded-t-xl rounded-b-none overflow-hidden h-48 sm:h-64 md:h-80 lg:h-96">
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/f89423905d0ca0e6c2f30532876f98601aff4fb5?width=1392"
+                        alt="Cream Stream project"
+                        className="w-full h-full object-cover hover-scale transition-transform duration-500"
+                      />
+                    </div>
+                    <div
+                      className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#222222] rounded-b-xl rounded-t-none px-4 sm:px-6 py-3 sm:py-4 gap-2 sm:gap-0"
+                      style={{ minHeight: "60px" }}
+                    >
+                      <h3 className="text-white text-lg sm:text-xl font-extrabold whitespace-nowrap">
+                        Cream Stream
+                      </h3>
+                      <div className="flex flex-wrap gap-2 sm:gap-4">
+                        <span className="px-3 sm:px-4 md:px-6 py-1 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-base font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
+                          Content
+                        </span>
+                        <span className="px-3 sm:px-4 md:px-6 py-1 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-base font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
+                          Graphics
+                        </span>
+                        <span className="px-3 sm:px-4 md:px-6 py-1 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-base font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
+                          Branding
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
               </RevealOnScroll>
 
               <RevealOnScroll animation="slideRight" delay={600}>
-                <div className="flex flex-col hover-lift">
-                  <div className="bg-[#222222] rounded-t-xl rounded-b-none overflow-hidden h-48 sm:h-64 md:h-80 lg:h-96">
-                    <img
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/39650eeeb9c6023fbc3d16426f5e9a26bdb9af3b?width=972"
-                      alt="Electrech project"
-                      className="w-full h-full object-cover hover-scale transition-transform duration-500"
-                    />
-                  </div>
-                  <div
-                    className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#222222] rounded-b-xl rounded-t-none px-4 sm:px-6 py-3 sm:py-4 gap-2 sm:gap-0"
-                    style={{ minHeight: "60px" }}
-                  >
-                    <h3 className="text-white text-lg sm:text-xl md:text-2xl font-extrabold">
-                      Electrech
-                    </h3>
-                    <div className="flex flex-wrap gap-2 sm:gap-4">
-                      <span className="px-3 sm:px-4 md:px-6 py-1 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-base font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
-                        UI/UX
-                      </span>
-                      <span className="px-3 sm:px-4 md:px-6 py-1 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-base font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
-                        3D model
-                      </span>
+                <a href="/case-study/electrech" className="block">
+                  <div className="flex flex-col hover-lift">
+                    <div className="bg-[#222222] rounded-t-xl rounded-b-none overflow-hidden h-48 sm:h-64 md:h-80 lg:h-96">
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/39650eeeb9c6023fbc3d16426f5e9a26bdb9af3b?width=972"
+                        alt="Electrech project"
+                        className="w-full h-full object-cover hover-scale transition-transform duration-500"
+                      />
+                    </div>
+                    <div
+                      className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#222222] rounded-b-xl rounded-t-none px-4 sm:px-6 py-3 sm:py-4 gap-2 sm:gap-0"
+                      style={{ minHeight: "60px" }}
+                    >
+                      <h3 className="text-white text-lg sm:text-xl md:text-2xl font-extrabold">
+                        Electrech
+                      </h3>
+                      <div className="flex flex-wrap gap-2 sm:gap-4">
+                        <span className="px-3 sm:px-4 md:px-6 py-1 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-base font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
+                          UI/UX
+                        </span>
+                        <span className="px-3 sm:px-4 md:px-6 py-1 border-2 border-[#FFA500] rounded-full text-[#FFA500] text-xs sm:text-sm md:text-base font-medium bg-[#222222] hover:bg-[#FFA500] hover:text-black transition-colors duration-300 hover-glow">
+                          3D model
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </a>
               </RevealOnScroll>
             </div>
           </div>

@@ -101,13 +101,13 @@ export default function ResponsiveHeader({
           </div>
         )}
 
-        {/* Menu Button */}
-        <div className="menu-container relative">
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/10 transition-colors duration-200 active:scale-95 touch-manipulation"
-            aria-label="Toggle menu"
-          >
+                 {/* Menu Button */}
+         <div className="menu-container relative group">
+           <button
+             onClick={() => setMenuOpen(!menuOpen)}
+             className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/10 transition-colors duration-200 active:scale-95 touch-manipulation"
+             aria-label="Toggle menu"
+           >
             <span className="text-white text-sm sm:text-base font-medium hidden sm:block">
               Menu
             </span>
@@ -136,30 +136,6 @@ export default function ResponsiveHeader({
                   {item.label}
                 </a>
               ))}
-              <div className="border-t border-daira-orange/30 mt-2 pt-2">
-                <a
-                  href="https://www.instagram.com/_daira.pk_?igsh=OXN5dW4ybmIwazFx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block px-6 py-2 text-white hover:bg-daira-orange hover:text-black transition-colors duration-200 text-sm"
-                >
-                  📸 Instagram
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/dairapk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block px-6 py-2 text-white hover:bg-daira-orange hover:text-black transition-colors duration-200 text-sm"
-                >
-                  💼 LinkedIn
-                </a>
-                <a
-                  href="mailto:DAIRAPK@GMAIL.COM"
-                  className="block px-6 py-2 text-white hover:bg-daira-orange hover:text-black transition-colors duration-200 text-sm"
-                >
-                  ✉️ Email
-                </a>
-              </div>
             </div>
           </div>
 
@@ -185,33 +161,6 @@ export default function ResponsiveHeader({
                   {item.label}
                 </a>
               ))}
-              <div className="border-t border-daira-orange/30 mt-2 pt-2">
-                <a
-                  href="https://www.instagram.com/_daira.pk_?igsh=OXN5dW4ybmIwazFx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block px-6 py-4 text-white hover:bg-daira-orange hover:text-black transition-colors duration-200 active:bg-daira-orange/80 touch-manipulation text-sm"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  📸 Instagram
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/dairapk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block px-6 py-4 text-white hover:bg-daira-orange hover:text-black transition-colors duration-200 active:bg-daira-orange/80 touch-manipulation text-sm"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  💼 LinkedIn
-                </a>
-                <a
-                  href="mailto:DAIRAPK@GMAIL.COM"
-                  className="block px-6 py-4 text-white hover:bg-daira-orange hover:text-black transition-colors duration-200 active:bg-daira-orange/80 touch-manipulation text-sm"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  ✉️ Email
-                </a>
-              </div>
             </div>
           </div>
         </div>

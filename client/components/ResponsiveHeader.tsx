@@ -139,17 +139,20 @@ export default function ResponsiveHeader({
             </div>
           </div>
 
-          {/* Mobile Menu Overlay */}
-          {menuOpen && (
-            <div className="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40" />
-          )}
-          
-          {/* Mobile Menu */}
-          <div className={`lg:hidden absolute right-0 mt-2 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-xl z-50 transition-all duration-300 transform ${
-            menuOpen 
-              ? "opacity-100 visible translate-y-0 scale-100" 
-              : "opacity-0 invisible translate-y-2 scale-95"
-          }`}>
+                     {/* Mobile Menu Overlay */}
+           {menuOpen && (
+             <div 
+               className="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+               onClick={() => setMenuOpen(false)}
+             />
+           )}
+           
+           {/* Mobile Menu */}
+           <div className={`lg:hidden absolute right-0 mt-2 w-64 bg-daira-dark border border-daira-orange rounded-lg shadow-xl z-50 transition-all duration-300 transform ${
+             menuOpen 
+               ? "opacity-100 visible translate-y-0 scale-100" 
+               : "opacity-0 invisible translate-y-2 scale-95"
+           }`}>
             <div className="py-2">
               {menuItems.map((item, index) => (
                 <a

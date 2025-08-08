@@ -48,3 +48,4 @@ If the error persists, try this alternative approach:
 1. Create a new EmailJS template
 2. Set the recipient email directly in the template
 3. Update the template ID in your code
+

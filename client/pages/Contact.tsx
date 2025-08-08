@@ -3,15 +3,9 @@ import FlipCounter from "../components/FlipCounter";
 import RevealOnScroll from "../components/RevealOnScroll";
 import AnimatedText from "../components/AnimatedText";
 import ResponsiveHeader from "../components/ResponsiveHeader";
-import { sendDirectMessageEmail, initEmailJS } from "../lib/emailjs";
 
 export default function Contact() {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    success?: boolean;
-    message?: string;
-  }>({});
 
   const services = [
     "Branding",
@@ -35,43 +29,7 @@ export default function Contact() {
     window.location.href = `/contact-form?services=${encodeURIComponent(servicesParam)}`;
   };
 
-  const handleDirectEmail = async () => {
-    if (selectedServices.length === 0) {
-      setSubmitStatus({
-        success: false,
-        message: "Please select at least one service before sending a direct message.",
-      });
-      return;
-    }
 
-    setIsSubmitting(true);
-    setSubmitStatus({});
-
-    try {
-      // Initialize EmailJS
-      initEmailJS();
-      
-      const result = await sendDirectMessageEmail(selectedServices);
-
-      setSubmitStatus({
-        success: result.success,
-        message: result.success 
-          ? "Direct message sent successfully! We'll get back to you soon."
-          : result.message,
-      });
-
-      if (result.success) {
-        setSelectedServices([]);
-      }
-    } catch (error) {
-      setSubmitStatus({
-        success: false,
-        message: "Failed to send direct message. Please try the contact form instead.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-daira-dark text-white overflow-x-hidden">
@@ -117,18 +75,7 @@ export default function Contact() {
                 YOU CAN ALWAYS SELECT MORE THAN ONE
               </p>
 
-              {/* Submit Status Message */}
-              {submitStatus.message && (
-                <div
-                  className={`mb-8 p-4 rounded-lg ${
-                    submitStatus.success
-                      ? "bg-green-500/20 border border-green-500 text-green-400"
-                      : "bg-red-500/20 border border-red-500 text-red-400"
-                  }`}
-                >
-                  {submitStatus.message}
-                </div>
-              )}
+
 
               {/* Service Selection Grid */}
               <div
@@ -180,14 +127,13 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                {/* NEXT Button */}
+              {/* Action Button */}
+              <div className="flex justify-center items-center">
                 <button
                   onClick={handleNext}
-                  disabled={selectedServices.length === 0 || isSubmitting}
+                  disabled={selectedServices.length === 0}
                   className={`mb-8 sm:mb-12 px-8 sm:px-12 py-3 sm:py-4 rounded-lg text-lg sm:text-xl font-bold transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 mx-auto ${
-                    selectedServices.length > 0 && !isSubmitting
+                    selectedServices.length > 0
                       ? "bg-daira-orange text-white hover:bg-daira-orange-light cursor-pointer"
                       : "bg-daira-orange text-white opacity-50 cursor-not-allowed"
                   }`}
@@ -195,22 +141,6 @@ export default function Contact() {
                   NEXT
                   <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-                  </svg>
-                </button>
-
-                {/* Direct Contact Button */}
-                <button
-                  onClick={handleDirectEmail}
-                  disabled={selectedServices.length === 0 || isSubmitting}
-                  className={`px-8 sm:px-12 py-3 sm:py-4 rounded-lg text-lg sm:text-xl font-bold transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 mx-auto ${
-                    selectedServices.length > 0 && !isSubmitting
-                      ? "bg-daira-yellow text-black hover:bg-daira-orange cursor-pointer"
-                      : "bg-daira-yellow text-black opacity-50 cursor-not-allowed"
-                  }`}
-                >
-                  {isSubmitting ? 'SENDING...' : 'DIRECT MESSAGE'}
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
                   </svg>
                 </button>
               </div>

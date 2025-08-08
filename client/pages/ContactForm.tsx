@@ -3,6 +3,7 @@ import FlipCounter from "../components/FlipCounter";
 import RevealOnScroll from "../components/RevealOnScroll";
 import AnimatedText from "../components/AnimatedText";
 import ResponsiveHeader from "../components/ResponsiveHeader";
+import { sendContactFormEmail, initEmailJS } from "../lib/emailjs";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,8 +13,16 @@ export default function ContactForm() {
     project: "",
   });
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    success?: boolean;
+    message?: string;
+  }>({});
 
   useEffect(() => {
+    // Initialize EmailJS
+    initEmailJS();
+    
     // Get selected services from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const servicesParam = urlParams.get("services");
@@ -32,10 +41,40 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", { ...formData, selectedServices });
+    setIsSubmitting(true);
+    setSubmitStatus({});
+
+    try {
+      const result = await sendContactFormEmail({
+        ...formData,
+        selectedServices,
+      });
+
+      setSubmitStatus({
+        success: result.success,
+        message: result.message,
+      });
+
+      if (result.success) {
+        // Reset form on success
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          project: "",
+        });
+        setSelectedServices([]);
+      }
+    } catch (error) {
+      setSubmitStatus({
+        success: false,
+        message: "An unexpected error occurred. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -96,6 +135,19 @@ export default function ContactForm() {
                 </div>
               )}
 
+              {/* Submit Status Message */}
+              {submitStatus.message && (
+                <div
+                  className={`mb-8 p-4 rounded-lg ${
+                    submitStatus.success
+                      ? "bg-green-500/20 border border-green-500 text-green-400"
+                      : "bg-red-500/20 border border-red-500 text-red-400"
+                  }`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
+
               {/* Contact Form */}
               <form
                 onSubmit={handleSubmit}
@@ -112,6 +164,7 @@ export default function ContactForm() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
+                    required
                     className="w-full bg-transparent border-b-2 border-white text-white text-lg py-2 focus:outline-none focus:border-daira-orange transition-colors"
                     placeholder=""
                   />
@@ -127,6 +180,7 @@ export default function ContactForm() {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
+                    required
                     className="w-full bg-transparent border-b-2 border-white text-white text-lg py-2 focus:outline-none focus:border-daira-orange transition-colors"
                     placeholder=""
                   />
@@ -140,6 +194,7 @@ export default function ContactForm() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
+                    required
                     className="w-full bg-transparent border-b-2 border-white text-white text-lg py-2 focus:outline-none focus:border-daira-orange transition-colors"
                     placeholder=""
                   />
@@ -154,6 +209,7 @@ export default function ContactForm() {
                     name="project"
                     value={formData.project}
                     onChange={handleInputChange}
+                    required
                     rows={4}
                     className="w-full bg-transparent border-b-2 border-white text-white text-lg py-2 focus:outline-none focus:border-daira-orange transition-colors resize-none"
                     placeholder=""
@@ -164,9 +220,12 @@ export default function ContactForm() {
                 <div className="pt-8">
                   <button
                     type="submit"
-                    className="bg-daira-orange hover:bg-daira-orange-light transition-colors px-12 py-4 rounded-full text-black font-bold text-xl hover-lift hover-glow"
+                    disabled={isSubmitting}
+                    className={`bg-daira-orange hover:bg-daira-orange-light transition-colors px-12 py-4 rounded-full text-black font-bold text-xl hover-lift hover-glow ${
+                      isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                    }`}
                   >
-                    SEND MESSAGE
+                    {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
                   </button>
                 </div>
               </form>

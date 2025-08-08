@@ -159,7 +159,9 @@ export default function MobileCarousel({
               }`}
               onTap={() => goToSlide(index)}
               feedback={true}
-            />
+            >
+              <div className="w-full h-full" />
+            </TouchOptimized>
           ))}
         </div>
       )}
